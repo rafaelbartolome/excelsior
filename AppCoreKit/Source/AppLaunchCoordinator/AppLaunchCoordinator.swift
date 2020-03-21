@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NavigatorKit
 import UIKit
 
 #warning("TODO: WIP")
@@ -16,10 +17,14 @@ typealias MainNavigator = AnyObject
 class AppLaunchCoordinator {
     
     // Dependencies
-    private let mainNavigator: MainNavigator
+    private let mainNavigator: Navigator
     
-    init(mainNavigator: MainNavigator) {
+    private let firstScreen: Screen
+    
+    init(mainNavigator: Navigator,
+         firstScreen: Screen) {
         self.mainNavigator = mainNavigator
+        self.firstScreen = firstScreen
     }
 
 }
@@ -28,11 +33,10 @@ class AppLaunchCoordinator {
 
 extension AppLaunchCoordinator {
     
+    // MARK: App lifecycle
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        #warning("TODO: WIP")
-
-//        mainNavigator.navigateToCharacterList()
-        setUpFirstScreen()
+        setUpMainScreen()
     }
 
     func applicationWillResignActive() {
@@ -72,26 +76,11 @@ extension AppLaunchCoordinator {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         //...
     }
-    
-    func setUpFirstScreen() {
-        #warning("TODO: WIP")
+}
 
-        //        let mainScreenViewController = AppAssembly.current.mainScreenViewController()
-        //
-        //        window?.rootViewController = mainScreenViewController
-        //        window?.makeKeyAndVisible()
-        
-        let bundle = Bundle(for: ViewController.self)
-        //        let bundle = Bundle.main
-        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-        
-        guard let mainVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController  else {
-            fatalError("Can't create AccountsViewController from storyboard")
-        }
-        AppCoreKitAssembly.window.rootViewController = mainVC
-        AppCoreKitAssembly.window.makeKeyAndVisible()
-        
-        
+private extension AppLaunchCoordinator {
+    func setUpMainScreen() {
+        mainNavigator.handle(navigation: .root(firstScreen))
     }
 }
 
