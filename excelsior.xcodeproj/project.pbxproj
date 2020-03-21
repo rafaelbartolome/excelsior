@@ -59,6 +59,12 @@
 		24C13A652426943400AF4B68 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A642426943400AF4B68 /* CharacterService.swift */; };
 		24C13A67242694D700AF4B68 /* DataProvidersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A66242694D700AF4B68 /* DataProvidersAssembly.swift */; };
 		24C13A6A2426B23700AF4B68 /* GetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A692426B23700AF4B68 /* GetCharacters.swift */; };
+		24C13A722426B7BC00AF4B68 /* SchedulerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A6D2426B6E600AF4B68 /* SchedulerFactory.swift */; };
+		24C13A732426B7BF00AF4B68 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A6F2426B77B00AF4B68 /* Scheduler.swift */; };
+		24C13A762426B8D700AF4B68 /* GCDSchedulerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A752426B8D700AF4B68 /* GCDSchedulerFactory.swift */; };
+		24C13A782426B8FD00AF4B68 /* GCDScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A772426B8FD00AF4B68 /* GCDScheduler.swift */; };
+		24C13A7B2426BD1B00AF4B68 /* FullySynchronousScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A7A2426BD1B00AF4B68 /* FullySynchronousScheduler.swift */; };
+		24C13A7D2426BE9600AF4B68 /* FullySynchronousSchedulerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A7C2426BE9600AF4B68 /* FullySynchronousSchedulerFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +252,12 @@
 		24C13A642426943400AF4B68 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 		24C13A66242694D700AF4B68 /* DataProvidersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvidersAssembly.swift; sourceTree = "<group>"; };
 		24C13A692426B23700AF4B68 /* GetCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharacters.swift; sourceTree = "<group>"; };
+		24C13A6D2426B6E600AF4B68 /* SchedulerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerFactory.swift; sourceTree = "<group>"; };
+		24C13A6F2426B77B00AF4B68 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		24C13A752426B8D700AF4B68 /* GCDSchedulerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDSchedulerFactory.swift; sourceTree = "<group>"; };
+		24C13A772426B8FD00AF4B68 /* GCDScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDScheduler.swift; sourceTree = "<group>"; };
+		24C13A7A2426BD1B00AF4B68 /* FullySynchronousScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullySynchronousScheduler.swift; sourceTree = "<group>"; };
+		24C13A7C2426BE9600AF4B68 /* FullySynchronousSchedulerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullySynchronousSchedulerFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,6 +455,7 @@
 		24C139A624261EEA00AF4B68 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				24C13A712426B7A000AF4B68 /* Common */,
 				2483C8652426080D0069B067 /* AppCoreKit.h */,
 				24C139CC2426377A00AF4B68 /* AppCoreKitAssembly.swift */,
 				24C139CF2426394100AF4B68 /* AppDelegate */,
@@ -617,9 +630,8 @@
 		24C13A3C2426826200AF4B68 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				24C13A6B2426B65A00AF4B68 /* LoadingViewController */,
 				24C13A212426824800AF4B68 /* CommonUIKit.h */,
-				24C13A3F242682B200AF4B68 /* LoadingViewController.swift */,
-				24C13A40242682B200AF4B68 /* LoadingViewController.xib */,
 				24C13A432426848B00AF4B68 /* CommonUIKitAssembly.swift */,
 			);
 			path = Source;
@@ -702,6 +714,52 @@
 				24C13A692426B23700AF4B68 /* GetCharacters.swift */,
 			);
 			path = Interactors;
+			sourceTree = "<group>";
+		};
+		24C13A6B2426B65A00AF4B68 /* LoadingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A3F242682B200AF4B68 /* LoadingViewController.swift */,
+				24C13A40242682B200AF4B68 /* LoadingViewController.xib */,
+			);
+			path = LoadingViewController;
+			sourceTree = "<group>";
+		};
+		24C13A6C2426B6C200AF4B68 /* Scheduler */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A792426BD0C00AF4B68 /* FullSync */,
+				24C13A742426B86F00AF4B68 /* GCD */,
+				24C13A6D2426B6E600AF4B68 /* SchedulerFactory.swift */,
+				24C13A6F2426B77B00AF4B68 /* Scheduler.swift */,
+			);
+			path = Scheduler;
+			sourceTree = "<group>";
+		};
+		24C13A712426B7A000AF4B68 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A6C2426B6C200AF4B68 /* Scheduler */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		24C13A742426B86F00AF4B68 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A772426B8FD00AF4B68 /* GCDScheduler.swift */,
+				24C13A752426B8D700AF4B68 /* GCDSchedulerFactory.swift */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		24C13A792426BD0C00AF4B68 /* FullSync */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A7A2426BD1B00AF4B68 /* FullySynchronousScheduler.swift */,
+				24C13A7C2426BE9600AF4B68 /* FullySynchronousSchedulerFactory.swift */,
+			);
+			path = FullSync;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1146,8 +1204,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C13A7B2426BD1B00AF4B68 /* FullySynchronousScheduler.swift in Sources */,
+				24C13A722426B7BC00AF4B68 /* SchedulerFactory.swift in Sources */,
 				24C139CD2426377A00AF4B68 /* AppCoreKitAssembly.swift in Sources */,
+				24C13A782426B8FD00AF4B68 /* GCDScheduler.swift in Sources */,
 				24C139D12426395300AF4B68 /* AppLaunchCoordinator.swift in Sources */,
+				24C13A762426B8D700AF4B68 /* GCDSchedulerFactory.swift in Sources */,
+				24C13A732426B7BF00AF4B68 /* Scheduler.swift in Sources */,
+				24C13A7D2426BE9600AF4B68 /* FullySynchronousSchedulerFactory.swift in Sources */,
 				24C1398F24260BD700AF4B68 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
