@@ -11,11 +11,13 @@ import Foundation
 class CharactersListContainerPresenter{
     weak var view: CharactersListContainerView!
     
+    private let getCharacters: GetCharacters
+    
     private var searchString: String?
     private var offset = 0
     
-    init() {
-        
+    init(getCharacters: GetCharacters) {
+        self.getCharacters = getCharacters
     }
 }
 
@@ -30,7 +32,18 @@ extension CharactersListContainerPresenter {
 private extension CharactersListContainerPresenter {
     func loadCharactesrsList() {
         #warning("TODO: WIP")
+        getCharacters.execute(nameStartsWith: searchString,
+                              offset: offset) { [weak self] result in
+                                switch result {
+                                case .success(let characters):
+                                    #warning("TODO: WIP")
 
-//        getCharactersList.execute()
+                                    break
+                                case .failure(let error):
+                                    #warning("TODO: WIP")
+                                    
+                                    break
+                                }
+        }
     }
 }

@@ -30,11 +30,15 @@ public final class CharactersListKitAssembly {
     }
     
     func charactersListContainerPresenter() -> CharactersListContainerPresenter {
-        CharactersListContainerPresenter()
+        CharactersListContainerPresenter(getCharacters: getCharacters())
     }
     
     func charactersListViewControllerFactory() -> CharactersListViewControllerFactory {
         CharactersListViewControllerFactory(loadingViewControllerProvider: commonUIKit)
+    }
+    
+    func getCharacters() -> GetCharacters {
+        GetCharacters(characterRepository: dataProviders.CharactersRepository)
     }
 }
 
