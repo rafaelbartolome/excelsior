@@ -50,6 +50,14 @@
 		24C13A42242682B300AF4B68 /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C13A40242682B200AF4B68 /* LoadingViewController.xib */; };
 		24C13A442426848B00AF4B68 /* CommonUIKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A432426848B00AF4B68 /* CommonUIKitAssembly.swift */; };
 		24C13A462426858000AF4B68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C13A452426858000AF4B68 /* Images.xcassets */; };
+		24C13A5024268E8F00AF4B68 /* Models.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C13A4E24268E8F00AF4B68 /* Models.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C13A5324268E8F00AF4B68 /* DataProviders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C13A4C24268E8F00AF4B68 /* DataProviders.framework */; };
+		24C13A5424268E8F00AF4B68 /* DataProviders.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C13A4C24268E8F00AF4B68 /* DataProviders.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24C13A5B242691E400AF4B68 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A5A242691E400AF4B68 /* Character.swift */; };
+		24C13A5F2426924000AF4B68 /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A5E2426924000AF4B68 /* CharacterRepository.swift */; };
+		24C13A612426935A00AF4B68 /* CharacterRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A602426935A00AF4B68 /* CharacterRepositoryError.swift */; };
+		24C13A652426943400AF4B68 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A642426943400AF4B68 /* CharacterService.swift */; };
+		24C13A67242694D700AF4B68 /* DataProvidersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A66242694D700AF4B68 /* DataProvidersAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +152,13 @@
 			remoteGlobalIDString = 24C13A1E2426824800AF4B68;
 			remoteInfo = CommonUIKit;
 		};
+		24C13A5124268E8F00AF4B68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2483C823242605F20069B067 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24C13A4B24268E8F00AF4B68;
+			remoteInfo = Models;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -155,6 +170,7 @@
 			files = (
 				24C13A352426824800AF4B68 /* CommonUIKit.framework in Embed Frameworks */,
 				2483C8792426080D0069B067 /* AppCoreKit.framework in Embed Frameworks */,
+				24C13A5424268E8F00AF4B68 /* DataProviders.framework in Embed Frameworks */,
 				24C139C42426370C00AF4B68 /* CharactersListKit.framework in Embed Frameworks */,
 				24C139ED242660F800AF4B68 /* NavigatorKit.framework in Embed Frameworks */,
 			);
@@ -220,6 +236,14 @@
 		24C13A40242682B200AF4B68 /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 		24C13A432426848B00AF4B68 /* CommonUIKitAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUIKitAssembly.swift; sourceTree = "<group>"; };
 		24C13A452426858000AF4B68 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		24C13A4C24268E8F00AF4B68 /* DataProviders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataProviders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24C13A4E24268E8F00AF4B68 /* Models.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
+		24C13A4F24268E8F00AF4B68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24C13A5A242691E400AF4B68 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		24C13A5E2426924000AF4B68 /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
+		24C13A602426935A00AF4B68 /* CharacterRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryError.swift; sourceTree = "<group>"; };
+		24C13A642426943400AF4B68 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
+		24C13A66242694D700AF4B68 /* DataProvidersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvidersAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +253,7 @@
 			files = (
 				24C13A342426824800AF4B68 /* CommonUIKit.framework in Frameworks */,
 				2483C8782426080D0069B067 /* AppCoreKit.framework in Frameworks */,
+				24C13A5324268E8F00AF4B68 /* DataProviders.framework in Frameworks */,
 				24C139C32426370C00AF4B68 /* CharactersListKit.framework in Frameworks */,
 				24C139EC242660F800AF4B68 /* NavigatorKit.framework in Frameworks */,
 			);
@@ -301,6 +326,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		24C13A4924268E8F00AF4B68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -313,13 +345,14 @@
 				24C1399824260E0900AF4B68 /* Excelsior */,
 				2483C8642426080D0069B067 /* AppCoreKit */,
 				2483C8712426080D0069B067 /* AppCoreKitTests */,
+				24C13A202426824800AF4B68 /* CommonUIKit */,
+				24C13A2D2426824800AF4B68 /* CommonUIKitTests */,
 				24C139AF2426370C00AF4B68 /* CharactersListKit */,
 				24C139BC2426370C00AF4B68 /* CharactersListKitTests */,
+				24C13A4D24268E8F00AF4B68 /* DataProviders */,
 				2483C84F242605F40069B067 /* UITests */,
 				24C139D8242660F800AF4B68 /* NavigatorKit */,
 				24C139E5242660F800AF4B68 /* NavigatorKitTests */,
-				24C13A202426824800AF4B68 /* CommonUIKit */,
-				24C13A2D2426824800AF4B68 /* CommonUIKitTests */,
 				2483C82C242605F20069B067 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -337,6 +370,7 @@
 				24C139DF242660F800AF4B68 /* NavigatorKitTests.xctest */,
 				24C13A1F2426824800AF4B68 /* CommonUIKit.framework */,
 				24C13A272426824800AF4B68 /* CommonUIKitTests.xctest */,
+				24C13A4C24268E8F00AF4B68 /* DataProviders.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -597,6 +631,68 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
+		24C13A4D24268E8F00AF4B68 /* DataProviders */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A5824268EA400AF4B68 /* Source */,
+				24C13A5924268EAC00AF4B68 /* SupportFiles */,
+			);
+			path = DataProviders;
+			sourceTree = "<group>";
+		};
+		24C13A5824268EA400AF4B68 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A4E24268E8F00AF4B68 /* Models.h */,
+				24C13A66242694D700AF4B68 /* DataProvidersAssembly.swift */,
+				24C13A5D2426922C00AF4B68 /* Repository */,
+				24C13A5C2426922000AF4B68 /* Models */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		24C13A5924268EAC00AF4B68 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A4F24268E8F00AF4B68 /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		24C13A5C2426922000AF4B68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A5A242691E400AF4B68 /* Character.swift */,
+				24C13A602426935A00AF4B68 /* CharacterRepositoryError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		24C13A5D2426922C00AF4B68 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A62242693F300AF4B68 /* Networking */,
+				24C13A5E2426924000AF4B68 /* CharacterRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		24C13A62242693F300AF4B68 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A63242693FC00AF4B68 /* Opeerations */,
+				24C13A642426943400AF4B68 /* CharacterService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		24C13A63242693FC00AF4B68 /* Opeerations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Opeerations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -632,6 +728,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		24C13A4724268E8F00AF4B68 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24C13A5024268E8F00AF4B68 /* Models.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -651,6 +755,7 @@
 				24C139C22426370C00AF4B68 /* PBXTargetDependency */,
 				24C139EB242660F800AF4B68 /* PBXTargetDependency */,
 				24C13A332426824800AF4B68 /* PBXTargetDependency */,
+				24C13A5224268E8F00AF4B68 /* PBXTargetDependency */,
 			);
 			name = excelsior;
 			productName = excelsior;
@@ -823,6 +928,24 @@
 			productReference = 24C13A272426824800AF4B68 /* CommonUIKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		24C13A4B24268E8F00AF4B68 /* DataProviders */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24C13A5524268E8F00AF4B68 /* Build configuration list for PBXNativeTarget "DataProviders" */;
+			buildPhases = (
+				24C13A4724268E8F00AF4B68 /* Headers */,
+				24C13A4824268E8F00AF4B68 /* Sources */,
+				24C13A4924268E8F00AF4B68 /* Frameworks */,
+				24C13A4A24268E8F00AF4B68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DataProviders;
+			productName = Models;
+			productReference = 24C13A4C24268E8F00AF4B68 /* DataProviders.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -872,6 +995,10 @@
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = 2483C82A242605F20069B067;
 					};
+					24C13A4B24268E8F00AF4B68 = {
+						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
+					};
 				};
 			};
 			buildConfigurationList = 2483C826242605F20069B067 /* Build configuration list for PBXProject "excelsior" */;
@@ -897,6 +1024,7 @@
 				24C139DE242660F800AF4B68 /* NavigatorKitTests */,
 				24C13A1E2426824800AF4B68 /* CommonUIKit */,
 				24C13A262426824800AF4B68 /* CommonUIKitTests */,
+				24C13A4B24268E8F00AF4B68 /* DataProviders */,
 			);
 		};
 /* End PBXProject section */
@@ -971,6 +1099,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		24C13A252426824800AF4B68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24C13A4A24268E8F00AF4B68 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1072,6 +1207,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		24C13A4824268E8F00AF4B68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24C13A5B242691E400AF4B68 /* Character.swift in Sources */,
+				24C13A612426935A00AF4B68 /* CharacterRepositoryError.swift in Sources */,
+				24C13A67242694D700AF4B68 /* DataProvidersAssembly.swift in Sources */,
+				24C13A5F2426924000AF4B68 /* CharacterRepository.swift in Sources */,
+				24C13A652426943400AF4B68 /* CharacterService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1139,6 +1286,11 @@
 			isa = PBXTargetDependency;
 			target = 24C13A1E2426824800AF4B68 /* CommonUIKit */;
 			targetProxy = 24C13A322426824800AF4B68 /* PBXContainerItemProxy */;
+		};
+		24C13A5224268E8F00AF4B68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24C13A4B24268E8F00AF4B68 /* DataProviders */;
+			targetProxy = 24C13A5124268E8F00AF4B68 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1753,6 +1905,65 @@
 			};
 			name = Release;
 		};
+		24C13A5624268E8F00AF4B68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = A4UTK9SZQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DataProviders/SupportFiles/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = es.rafaelbartolome.Models;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		24C13A5724268E8F00AF4B68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = A4UTK9SZQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DataProviders/SupportFiles/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = es.rafaelbartolome.Models;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1851,6 +2062,15 @@
 			buildConfigurations = (
 				24C13A3A2426824800AF4B68 /* Debug */,
 				24C13A3B2426824800AF4B68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24C13A5524268E8F00AF4B68 /* Build configuration list for PBXNativeTarget "DataProviders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24C13A5624268E8F00AF4B68 /* Debug */,
+				24C13A5724268E8F00AF4B68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

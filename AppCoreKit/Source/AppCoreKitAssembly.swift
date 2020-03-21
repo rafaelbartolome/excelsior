@@ -10,6 +10,7 @@ import Foundation
 import NavigatorKit
 import CommonUIKit
 import CharactersListKit
+import DataProviders
 import UIKit
 
 public protocol AppCoreKitAssemblyProviderProtocol {
@@ -30,7 +31,8 @@ public final class AppCoreKitAssembly {
     lazy var mainNavigator = navigatorKit.navigator()
     
     // SetUp first feature framework - Characters list
-    lazy var charactersListKit = CharactersListKitAssembly(commonUIKit: commonUIKit)
+    lazy var charactersListKit = CharactersListKitAssembly(commonUIKit: commonUIKit,
+                                                           dataProviders: dataProviders)
     
     // SetUp the launch coordinator with the first screen
     lazy var appLaunchCoordinator = AppLaunchCoordinator(mainNavigator: mainNavigator,
@@ -38,5 +40,8 @@ public final class AppCoreKitAssembly {
     
     // Setup Common UI kit
     lazy var commonUIKit = CommonUIKitAssembly()
+    
+    // SetUp data providers
+    lazy var dataProviders = DataProvidersAssembly()
 
 }

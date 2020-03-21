@@ -10,15 +10,19 @@ import Foundation
 import NavigatorKit
 import UIKit
 import CommonUIKit
+import DataProviders
 
 /// This is the assembly for the feature - Characters List.
 
 public final class CharactersListKitAssembly {
     
     private let commonUIKit: CommonUIKitAssembly
+    private let dataProviders: DataProvidersAssembly
     
-    public init(commonUIKit: CommonUIKitAssembly) {
+    public init(commonUIKit: CommonUIKitAssembly,
+                dataProviders: DataProvidersAssembly) {
         self.commonUIKit = commonUIKit
+        self.dataProviders = dataProviders
     }
     
     public var mainScreen : Screen {
