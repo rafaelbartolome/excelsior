@@ -8,36 +8,30 @@
 
 import Foundation
 import NavigatorKit
+import CharactersListKit
 import UIKit
 
 public protocol AppCoreKitAssemblyProviderProtocol {
     func appCoreKitAssembly() -> AppCoreKitAssembly
 }
 
+/// This is the main assembly in charge of creating all dependencies for the App.
+/// It's created in the AppDelegate when the app starts.
+
 public final class AppCoreKitAssembly {
     
     static var current: AppCoreKitAssembly!
     
     static let window = UIWindow()
-    
+
+    // Setup navigation kit
     lazy var navigatorKit = NavigatorKitAssembly(window: Self.window)
     lazy var mainNavigator = navigatorKit.navigator()
     
-    #warning("TODO: WIP")
+    // SetUp first feature framework - Characters list
+    lazy var charactersListKit = CharactersListKitAssembly()
+    
+    // SetUp the launch coordinator with the first screen
     lazy var appLaunchCoordinator = AppLaunchCoordinator(mainNavigator: mainNavigator,
-                                                         firstScreen: FirstScreen())
-}
-
-class FirstScreen: Screen {
-    func viewController(with params: ScreenParams?) -> UIViewController {
-        let bundle = Bundle(for: ViewController.self)
-        //        let bundle = Bundle.main
-        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-        
-        guard let mainVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController  else {
-            fatalError("Can't create AccountsViewController from storyboard")
-        }
-        
-        return mainVC
-    }
+                                                         firstScreen: charactersListKit.mainScreen)
 }

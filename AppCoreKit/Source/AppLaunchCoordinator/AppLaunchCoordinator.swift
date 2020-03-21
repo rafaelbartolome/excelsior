@@ -10,10 +10,8 @@ import Foundation
 import NavigatorKit
 import UIKit
 
-#warning("TODO: WIP")
-typealias MainNavigator = AnyObject
+/// AppLaunchCoordinator manages lifecycle of the app so AppDelegare jusr receives events.
 
-/// AppLaunchCoordinator manages all lifecycle of the app.
 class AppLaunchCoordinator {
     
     // Dependencies
