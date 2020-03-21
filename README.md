@@ -34,15 +34,20 @@ Main challenge is to define the boundaries of each framework and define how is r
 
 ![Vertical frameworks](Doc/mixed-fmw.png)
 
-### How to split 
-As this is 
+### Frameworks architecture
+
+TODO: Describe final architecture
+
+### FEatures internal architecture
+
+TODO: describe internal arch
+
+
 
 TODO: 
 API Client Moya, Moya’s approach doesn’t scale with medium to big teams. You end up with a single [big enum type](https://github.com/Moya/Moya/blob/master/docs/Examples/Basic.md) that contains lots of details. Merge conflicts within that file will certainly arise, and generally, the end file will be hard to process. The "open/close" principle of SOLID is broken.
 
-TODO:
-### Vertical vs horizontal frameworks
-Vertical 
+
 
 ## 📌 Features 
 
