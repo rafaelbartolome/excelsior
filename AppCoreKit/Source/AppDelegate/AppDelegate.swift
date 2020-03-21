@@ -60,9 +60,9 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
 //    }
     
     
-    public func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        appLaunchCoordinator.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
-    }
+//    public func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+//        appLaunchCoordinator.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+//    }
 
 }
 

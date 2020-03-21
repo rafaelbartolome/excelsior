@@ -9,12 +9,17 @@
 import Foundation
 import NavigatorKit
 import UIKit
+import CommonUIKit
 
 /// This is the assembly for the feature - Characters List.
 
 public final class CharactersListKitAssembly {
     
-    public init() {}
+    private let commonUIKit: CommonUIKitAssembly
+    
+    public init(commonUIKit: CommonUIKitAssembly) {
+        self.commonUIKit = commonUIKit
+    }
     
     public var mainScreen : Screen {
         CharactersListScreen(charactersListContainerViewControllerProvider: self)
@@ -22,6 +27,10 @@ public final class CharactersListKitAssembly {
     
     func charactersListContainerPresenter() -> CharactersListContainerPresenter {
         CharactersListContainerPresenter()
+    }
+    
+    func charactersListViewControllerFactory() -> CharactersListViewControllerFactory {
+        CharactersListViewControllerFactory(loadingViewControllerProvider: commonUIKit)
     }
 }
 
@@ -31,6 +40,7 @@ extension CharactersListKitAssembly: CharactersListContainerViewControllerProvid
 
         let storyboard = UIStoryboard(name: CharactersListContainerViewController.storyboard, bundle: bundle)
         return CharactersListContainerViewController.createWith(storyboard: storyboard,
-                                                       charactersListContainerPresenter: charactersListContainerPresenter())
+                                                                charactersListContainerPresenter: charactersListContainerPresenter(),
+                                                                charactersListViewControllerFactory: charactersListViewControllerFactory())
     }
 }

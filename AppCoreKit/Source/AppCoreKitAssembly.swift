@@ -8,6 +8,7 @@
 
 import Foundation
 import NavigatorKit
+import CommonUIKit
 import CharactersListKit
 import UIKit
 
@@ -29,9 +30,13 @@ public final class AppCoreKitAssembly {
     lazy var mainNavigator = navigatorKit.navigator()
     
     // SetUp first feature framework - Characters list
-    lazy var charactersListKit = CharactersListKitAssembly()
+    lazy var charactersListKit = CharactersListKitAssembly(commonUIKit: commonUIKit)
     
     // SetUp the launch coordinator with the first screen
     lazy var appLaunchCoordinator = AppLaunchCoordinator(mainNavigator: mainNavigator,
                                                          firstScreen: charactersListKit.mainScreen)
+    
+    // Setup Common UI kit
+    lazy var commonUIKit = CommonUIKitAssembly()
+
 }

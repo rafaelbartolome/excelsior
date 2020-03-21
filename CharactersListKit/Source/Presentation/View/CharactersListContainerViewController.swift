@@ -18,20 +18,21 @@ class CharactersListContainerViewController: UIViewController {
     
     private var charactersListContainerPresenter: CharactersListContainerPresenter! {
         didSet {
-            #warning("TODO: WIP")
-//            charactersListPresenter.view = self
+           charactersListContainerPresenter.view = self
         }
     }
+    private var charactersListViewControllerFactory: CharactersListViewControllerFactory!
 
     static func createWith(storyboard: UIStoryboard,
-                           charactersListContainerPresenter: CharactersListContainerPresenter) -> CharactersListContainerViewController {
+                           charactersListContainerPresenter: CharactersListContainerPresenter,
+                           charactersListViewControllerFactory: CharactersListViewControllerFactory) -> CharactersListContainerViewController {
         guard let charactersListContainerVC = storyboard.instantiateViewController(withIdentifier: CharactersListContainerViewController.viewController) as? CharactersListContainerViewController  else {
             fatalError("Can't create charactersListContainerVC from storyboard")
         }
         
         // setup dependencies
         charactersListContainerVC.charactersListContainerPresenter = charactersListContainerPresenter
-
+        charactersListContainerVC.charactersListViewControllerFactory = charactersListViewControllerFactory
         
         return charactersListContainerVC
     }
@@ -40,18 +41,28 @@ class CharactersListContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        charactersListContainerPresenter.didLoad()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension CharactersListContainerViewController: CharactersListContainerView {
+    func showView(forState state: CharactersListState) {
+        let viewController = charactersListViewControllerFactory.viewController(forState: state,
+                                                                                loadErrorDelegate: self) //TODO
+        #warning("TODO: check if is needed to clear previous vc")
+        setContentViewController(viewController, in: view)
+    }
+}
+
+
+private extension CharactersListContainerViewController {
+    func setContentViewController(_ viewController: UIViewController, in view: UIView) {
+        addChild(viewController)
+        view.addSubview(viewController.view)
+        viewController.view.frame = view.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        viewController.didMove(toParent: self)
+    }
+}
+
+    

@@ -14,7 +14,7 @@ import Foundation
 }
 
 enum CharactersListState {
-    case loading
+    case loading(String)
     #warning("TODO: WIP")
     case charactersList([Any])
     case loadError(title: String, description: String, delegate: RetryDelegate)
