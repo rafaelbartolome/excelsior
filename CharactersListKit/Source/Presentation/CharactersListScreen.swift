@@ -11,25 +11,13 @@ import NavigatorKit
 import UIKit
 
 class CharactersListScreen: Screen {
-    private unowned let charactersListViewControllerProvider: CharactersListViewControllerProvider
+    private unowned let charactersListContainerViewControllerProvider: CharactersListContainerViewControllerProvider
     
-    init(charactersListViewControllerProvider: CharactersListViewControllerProvider) {
-        self.charactersListViewControllerProvider = charactersListViewControllerProvider
+    init(charactersListContainerViewControllerProvider: CharactersListContainerViewControllerProvider) {
+        self.charactersListContainerViewControllerProvider = charactersListContainerViewControllerProvider
     }
     
     func viewController(with params: ScreenParams?) -> UIViewController {
-        #warning("TODO: WIP")
-
-        let bundle = Bundle(for: CharactersListViewController.self)
-        //        let bundle = Bundle.main
-        let storyboard = UIStoryboard(name: "CharactersList", bundle: bundle)
-        
-        guard let mainVC = storyboard.instantiateViewController(withIdentifier: "CharactersListViewController") as? CharactersListViewController  else {
-            fatalError("Can't create CharactersListViewController from storyboard")
-        }
-        
-        return mainVC
+        return charactersListContainerViewControllerProvider.charactersListContainerViewController()
     }
-    
-    
 }

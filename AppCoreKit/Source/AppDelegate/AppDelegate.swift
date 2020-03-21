@@ -55,9 +55,9 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
         appLaunchCoordinator.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
     }
     
-    public func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        appLaunchCoordinator.application(application, didReceiveRemoteNotification: userInfo)
-    }
+//    public func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+//        appLaunchCoordinator.application(application, didReceiveRemoteNotification: userInfo)
+//    }
     
     
     public func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {

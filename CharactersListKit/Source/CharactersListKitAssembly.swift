@@ -17,18 +17,20 @@ public final class CharactersListKitAssembly {
     public init() {}
     
     public var mainScreen : Screen {
-        CharactersListScreen(charactersListViewControllerProvider: self)
+        CharactersListScreen(charactersListContainerViewControllerProvider: self)
     }
     
-    func charactersListPresenter() -> CharactersListPresenter {
-        CharactersListPresenter()
+    func charactersListContainerPresenter() -> CharactersListContainerPresenter {
+        CharactersListContainerPresenter()
     }
 }
 
-extension CharactersListKitAssembly: CharactersListViewControllerProvider {
-    func charactersListViewController() -> CharactersListViewController {
-        let storyboard = UIStoryboard(name: CharactersListViewController.storyboard, bundle: nil)
-        return CharactersListViewController.createWith(storyboard: storyboard,
-                                                       charactersListPresenter: charactersListPresenter())
+extension CharactersListKitAssembly: CharactersListContainerViewControllerProvider {
+    func charactersListContainerViewController() -> CharactersListContainerViewController {
+        let bundle = Bundle(for: CharactersListContainerViewController.self)
+
+        let storyboard = UIStoryboard(name: CharactersListContainerViewController.storyboard, bundle: bundle)
+        return CharactersListContainerViewController.createWith(storyboard: storyboard,
+                                                       charactersListContainerPresenter: charactersListContainerPresenter())
     }
 }

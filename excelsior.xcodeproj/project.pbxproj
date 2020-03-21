@@ -34,10 +34,13 @@
 		24C139FB242661C700AF4B68 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C139FA242661C700AF4B68 /* Screen.swift */; };
 		24C139FD2426698000AF4B68 /* NavigatorKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C139FC2426698000AF4B68 /* NavigatorKitAssembly.swift */; };
 		24C13A0024266B7B00AF4B68 /* CharactersListKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C139FF24266B7B00AF4B68 /* CharactersListKitAssembly.swift */; };
-		24C13A0324266C0300AF4B68 /* CharactersList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C13A0224266C0300AF4B68 /* CharactersList.storyboard */; };
-		24C13A0624266C3500AF4B68 /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A0524266C3500AF4B68 /* CharactersListViewController.swift */; };
+		24C13A0624266C3500AF4B68 /* CharactersListContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A0524266C3500AF4B68 /* CharactersListContainerViewController.swift */; };
 		24C13A0824266CA900AF4B68 /* CharactersListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A0724266CA900AF4B68 /* CharactersListScreen.swift */; };
-		24C13A0A24266FB800AF4B68 /* CharactersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A0924266FB800AF4B68 /* CharactersListPresenter.swift */; };
+		24C13A0A24266FB800AF4B68 /* CharactersListContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A0924266FB800AF4B68 /* CharactersListContainerPresenter.swift */; };
+		24C13A0E242673DB00AF4B68 /* CharactersListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A0D242673DB00AF4B68 /* CharactersListContainerView.swift */; };
+		24C13A112426744900AF4B68 /* CharactersListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A102426744900AF4B68 /* CharactersListState.swift */; };
+		24C13A132426751300AF4B68 /* CharactersListContaine22rViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A122426751300AF4B68 /* CharactersListContaine22rViewController.swift */; };
+		24C13A152426793400AF4B68 /* CharactersListContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C13A142426793400AF4B68 /* CharactersListContainer.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,10 +172,13 @@
 		24C139FA242661C700AF4B68 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		24C139FC2426698000AF4B68 /* NavigatorKitAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorKitAssembly.swift; sourceTree = "<group>"; };
 		24C139FF24266B7B00AF4B68 /* CharactersListKitAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListKitAssembly.swift; sourceTree = "<group>"; };
-		24C13A0224266C0300AF4B68 /* CharactersList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharactersList.storyboard; sourceTree = "<group>"; };
-		24C13A0524266C3500AF4B68 /* CharactersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewController.swift; sourceTree = "<group>"; };
+		24C13A0524266C3500AF4B68 /* CharactersListContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListContainerViewController.swift; sourceTree = "<group>"; };
 		24C13A0724266CA900AF4B68 /* CharactersListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListScreen.swift; sourceTree = "<group>"; };
-		24C13A0924266FB800AF4B68 /* CharactersListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListPresenter.swift; sourceTree = "<group>"; };
+		24C13A0924266FB800AF4B68 /* CharactersListContainerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListContainerPresenter.swift; sourceTree = "<group>"; };
+		24C13A0D242673DB00AF4B68 /* CharactersListContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListContainerView.swift; sourceTree = "<group>"; };
+		24C13A102426744900AF4B68 /* CharactersListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListState.swift; sourceTree = "<group>"; };
+		24C13A122426751300AF4B68 /* CharactersListContaine22rViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListContaine22rViewController.swift; sourceTree = "<group>"; };
+		24C13A142426793400AF4B68 /* CharactersListContainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharactersListContainer.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,7 +456,7 @@
 		24C13A0124266BF200AF4B68 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				24C13A0224266C0300AF4B68 /* CharactersList.storyboard */,
+				24C13A142426793400AF4B68 /* CharactersListContainer.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -458,11 +464,38 @@
 		24C13A0424266C0C00AF4B68 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				24C13A0F2426743400AF4B68 /* Common */,
 				24C13A0724266CA900AF4B68 /* CharactersListScreen.swift */,
-				24C13A0524266C3500AF4B68 /* CharactersListViewController.swift */,
-				24C13A0924266FB800AF4B68 /* CharactersListPresenter.swift */,
+				24C13A0B242673B500AF4B68 /* View */,
+				24C13A0C242673BC00AF4B68 /* Presenter */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		24C13A0B242673B500AF4B68 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A0524266C3500AF4B68 /* CharactersListContainerViewController.swift */,
+				24C13A0D242673DB00AF4B68 /* CharactersListContainerView.swift */,
+				24C13A122426751300AF4B68 /* CharactersListContaine22rViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		24C13A0C242673BC00AF4B68 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A0924266FB800AF4B68 /* CharactersListContainerPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		24C13A0F2426743400AF4B68 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A102426744900AF4B68 /* CharactersListState.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -748,7 +781,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24C13A0324266C0300AF4B68 /* CharactersList.storyboard in Resources */,
+				24C13A152426793400AF4B68 /* CharactersListContainer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,8 +847,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24C13A0A24266FB800AF4B68 /* CharactersListPresenter.swift in Sources */,
-				24C13A0624266C3500AF4B68 /* CharactersListViewController.swift in Sources */,
+				24C13A0E242673DB00AF4B68 /* CharactersListContainerView.swift in Sources */,
+				24C13A112426744900AF4B68 /* CharactersListState.swift in Sources */,
+				24C13A132426751300AF4B68 /* CharactersListContaine22rViewController.swift in Sources */,
+				24C13A0A24266FB800AF4B68 /* CharactersListContainerPresenter.swift in Sources */,
+				24C13A0624266C3500AF4B68 /* CharactersListContainerViewController.swift in Sources */,
 				24C13A0824266CA900AF4B68 /* CharactersListScreen.swift in Sources */,
 				24C13A0024266B7B00AF4B68 /* CharactersListKitAssembly.swift in Sources */,
 			);

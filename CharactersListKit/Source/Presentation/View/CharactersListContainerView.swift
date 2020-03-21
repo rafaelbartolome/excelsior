@@ -1,5 +1,5 @@
 //
-//  CharactersListPresenter.swift
+//  CharactersListContainerView.swift
 //  CharactersListKit
 //
 //  Created by Rafael Bartolome on 21/03/2020.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-class CharactersListPresenter{
-    
+protocol CharactersListContainerView: AnyObject {
+    func showView(forState state: CharactersListState)
 }
