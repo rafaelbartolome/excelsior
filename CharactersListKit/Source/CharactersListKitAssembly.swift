@@ -11,6 +11,7 @@ import NavigatorKit
 import UIKit
 import CommonUIKit
 import DataProviders
+import ToolsKit
 
 /// This is the assembly for the feature - Characters List.
 
@@ -38,7 +39,8 @@ public final class CharactersListKitAssembly {
     }
     
     func getCharacters() -> GetCharacters {
-        GetCharacters(characterRepository: dataProviders.CharactersRepository)
+        GetCharacters(characterRepository: dataProviders.CharactersRepository,
+                      schedulerFactory: GCDSchedulerFactory())
     }
 }
 

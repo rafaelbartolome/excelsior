@@ -8,6 +8,7 @@
 
 import Foundation
 import DataProviders
+import ToolsKit
 
 protocol GetCharactersProtocol: AnyObject {
     func execute(nameStartsWith: String?,
@@ -17,9 +18,12 @@ protocol GetCharactersProtocol: AnyObject {
 
 class GetCharacters{
     let characterRepository: CharacterRepository
+    let mainThreadScheduler: Scheduler
     
-    init(characterRepository: CharacterRepository) {
+    init(characterRepository: CharacterRepository,
+         schedulerFactory: SchedulerFactory) {
         self.characterRepository = characterRepository
+        mainThreadScheduler = schedulerFactory.mainThreadScheduler
     }
 }
 
@@ -28,7 +32,10 @@ extension GetCharacters: GetCharactersProtocol {
                  offset: Int?,
                  completion: @escaping CharactersCompletion) {
         characterRepository.characters(nameStartsWith: name,
-                                       offset: offset,
-                                       completion: completion)
+                                       offset: offset) { [weak self] result in
+                                        self?.mainThreadScheduler.scheduleAsync {
+                                            completion(result)
+                                        }
+        }
     }
 }

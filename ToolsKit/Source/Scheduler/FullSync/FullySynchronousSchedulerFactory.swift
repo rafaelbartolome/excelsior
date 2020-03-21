@@ -1,6 +1,6 @@
 //
 //  FullySynchronousSchedulerFactory.swift
-//  AppCoreKit
+//  ToolsKit
 //
 //  Created by Rafael Bartolome on 21/03/2020.
 //  Copyright © 2020 Rafael Bartolome. All rights reserved.
@@ -13,15 +13,15 @@ import Foundation
 public class FullySynchronousSchedulerFactory: SchedulerFactory {
     public init() {}
     
-    func serialScheduler(with name: String) -> Scheduler {
+    public func serialScheduler(with name: String) -> Scheduler {
         FullySynchronousScheduler(name: name)
     }
     
-    func concurrentScheduler(with name: String) -> Scheduler {
+    public func concurrentScheduler(with name: String) -> Scheduler {
          FullySynchronousScheduler(name: name)
     }
     
-    var mainThreadScheduler: Scheduler {
+    public var mainThreadScheduler: Scheduler {
          FullySynchronousScheduler(name: "main")
     }
 }
