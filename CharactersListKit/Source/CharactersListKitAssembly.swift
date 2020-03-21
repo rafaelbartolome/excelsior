@@ -35,7 +35,8 @@ public final class CharactersListKitAssembly {
     }
     
     func charactersListViewControllerFactory() -> CharactersListViewControllerFactory {
-        CharactersListViewControllerFactory(loadingViewControllerProvider: commonUIKit)
+        CharactersListViewControllerFactory(loadingViewControllerProvider: commonUIKit,
+                                            retryViewControllerProvider: commonUIKit)
     }
     
     func getCharacters() -> GetCharacters {

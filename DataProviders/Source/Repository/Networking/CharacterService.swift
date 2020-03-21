@@ -26,8 +26,9 @@ extension CharacterService: CharacterServiceProtocol {
                     completion: @escaping CharactersCompletion) {
         
         #warning("TODO: WIP")
-        completion(.failure(.notFound))
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            completion(.failure(.notFound))
+        }
     }
     
     func character(with id: Int, completion: @escaping CharacterCompletion) {

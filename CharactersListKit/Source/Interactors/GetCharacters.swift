@@ -13,7 +13,7 @@ import ToolsKit
 protocol GetCharactersProtocol: AnyObject {
     func execute(nameStartsWith: String?,
                  offset: Int?,
-                 completion: @escaping CharactersCompletion)
+                 completion: @escaping (Result<[Character], CharacterListError>) -> Void)
 }
 
 class GetCharacters{
@@ -30,11 +30,16 @@ class GetCharacters{
 extension GetCharacters: GetCharactersProtocol {
     func execute(nameStartsWith name: String?,
                  offset: Int?,
-                 completion: @escaping CharactersCompletion) {
+                 completion: @escaping (Result<[Character], CharacterListError>) -> Void) {
         characterRepository.characters(nameStartsWith: name,
                                        offset: offset) { [weak self] result in
                                         self?.mainThreadScheduler.scheduleAsync {
-                                            completion(result)
+                                            switch result {
+                                            case .success(let characters):
+                                                completion(.success(characters))
+                                            case .failure(let repoError):
+                                                completion(.failure(CharacterListError(characterRepositoryError: repoError)))
+                                            }
                                         }
         }
     }

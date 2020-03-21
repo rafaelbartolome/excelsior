@@ -7,15 +7,11 @@
 //
 
 import Foundation
-
-    #warning("TODO: WIP")
-@objc public protocol RetryDelegate: AnyObject {
-    func retryViewDidTapOnButton()
-}
+import CommonUIKit
 
 enum CharactersListState {
     case loading(String)
     #warning("TODO: WIP")
     case charactersList([Any])
-    case loadError(title: String, description: String, delegate: RetryDelegate)
+    case loadError(title: String, description: String, delegate: RetryViewControllerDelegate)
 }

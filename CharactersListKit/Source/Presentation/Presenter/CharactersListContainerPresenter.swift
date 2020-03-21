@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CommonUIKit
 
 class CharactersListContainerPresenter{
     weak var view: CharactersListContainerView!
@@ -24,26 +25,45 @@ class CharactersListContainerPresenter{
 extension CharactersListContainerPresenter {
     func didLoad() {
         view.showView(forState: .loading("Loading characters list ...")) //TODO: Localization
-        loadCharactesrsList()
+        loadCharactersList()
     }
 }
 
 
 private extension CharactersListContainerPresenter {
-    func loadCharactesrsList() {
+    func loadCharactersList() {
         #warning("TODO: WIP")
+        
+        /// Interactor returns always in main thread
         getCharacters.execute(nameStartsWith: searchString,
                               offset: offset) { [weak self] result in
+                                guard let s = self else { return }
                                 switch result {
                                 case .success(let characters):
                                     #warning("TODO: WIP")
 
                                     break
                                 case .failure(let error):
-                                    #warning("TODO: WIP")
-                                    
-                                    break
+                                    s.getCharactersFinished(with: error)
                                 }
         }
+    }
+    
+    func getCharactersFinished(with error: CharacterListError) {
+        view.showView(forState: .loadError(title: "Something was wrong",
+                                           description: error.localizedDescription,
+                                           delegate: self))
+    }
+    
+    
+    func retry() {
+        view.showView(forState: .loading("Loading characters list ...")) //TODO: Localization
+        loadCharactersList()
+    }
+}
+
+extension CharactersListContainerPresenter: RetryViewControllerDelegate {
+    func retryViewDidTapOnButton() {
+        retry()
     }
 }

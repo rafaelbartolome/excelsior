@@ -68,6 +68,10 @@
 		24C13A952426C04A00AF4B68 /* GCDSchedulerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A752426B8D700AF4B68 /* GCDSchedulerFactory.swift */; };
 		24C13A962426C04A00AF4B68 /* SchedulerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A6D2426B6E600AF4B68 /* SchedulerFactory.swift */; };
 		24C13A972426C04A00AF4B68 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A6F2426B77B00AF4B68 /* Scheduler.swift */; };
+		24C13A992426C3BF00AF4B68 /* CharacterListError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A982426C3BF00AF4B68 /* CharacterListError.swift */; };
+		24C13A9D2426C6DD00AF4B68 /* RetryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A9B2426C6DD00AF4B68 /* RetryViewController.swift */; };
+		24C13A9E2426C6DD00AF4B68 /* RetryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C13A9C2426C6DD00AF4B68 /* RetryViewController.xib */; };
+		24C13AA02426C99000AF4B68 /* RetryViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A9F2426C99000AF4B68 /* RetryViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -272,6 +276,10 @@
 		24C13A832426BFE100AF4B68 /* ToolsKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ToolsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C13A852426BFE100AF4B68 /* ToolsKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolsKit.h; sourceTree = "<group>"; };
 		24C13A862426BFE100AF4B68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24C13A982426C3BF00AF4B68 /* CharacterListError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListError.swift; sourceTree = "<group>"; };
+		24C13A9B2426C6DD00AF4B68 /* RetryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryViewController.swift; sourceTree = "<group>"; };
+		24C13A9C2426C6DD00AF4B68 /* RetryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RetryViewController.xib; sourceTree = "<group>"; };
+		24C13A9F2426C99000AF4B68 /* RetryViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -629,6 +637,7 @@
 			children = (
 				24C13A102426744900AF4B68 /* CharactersListState.swift */,
 				24C13A1624267F4A00AF4B68 /* CharactersListViewControllerFactory.swift */,
+				24C13A982426C3BF00AF4B68 /* CharacterListError.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -654,6 +663,7 @@
 		24C13A3C2426826200AF4B68 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				24C13A9A2426C6C000AF4B68 /* RetryViewController */,
 				24C13A6B2426B65A00AF4B68 /* LoadingViewController */,
 				24C13A212426824800AF4B68 /* CommonUIKit.h */,
 				24C13A432426848B00AF4B68 /* CommonUIKitAssembly.swift */,
@@ -809,6 +819,16 @@
 				24C13A862426BFE100AF4B68 /* Info.plist */,
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		24C13A9A2426C6C000AF4B68 /* RetryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				24C13A9B2426C6DD00AF4B68 /* RetryViewController.swift */,
+				24C13A9C2426C6DD00AF4B68 /* RetryViewController.xib */,
+				24C13A9F2426C99000AF4B68 /* RetryViewControllerDelegate.swift */,
+			);
+			path = RetryViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1242,6 +1262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C13A9E2426C6DD00AF4B68 /* RetryViewController.xib in Resources */,
 				24C13A42242682B300AF4B68 /* LoadingViewController.xib in Resources */,
 				24C13A462426858000AF4B68 /* Images.xcassets in Resources */,
 			);
@@ -1316,6 +1337,7 @@
 				24C13A0624266C3500AF4B68 /* CharactersListContainerViewController.swift in Sources */,
 				24C13A0824266CA900AF4B68 /* CharactersListScreen.swift in Sources */,
 				24C13A6A2426B23700AF4B68 /* GetCharacters.swift in Sources */,
+				24C13A992426C3BF00AF4B68 /* CharacterListError.swift in Sources */,
 				24C13A0024266B7B00AF4B68 /* CharactersListKitAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1351,8 +1373,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C13AA02426C99000AF4B68 /* RetryViewControllerDelegate.swift in Sources */,
 				24C13A41242682B300AF4B68 /* LoadingViewController.swift in Sources */,
 				24C13A442426848B00AF4B68 /* CommonUIKitAssembly.swift in Sources */,
+				24C13A9D2426C6DD00AF4B68 /* RetryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

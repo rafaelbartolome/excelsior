@@ -13,9 +13,13 @@ import CommonUIKit
 class CharactersListViewControllerFactory {
     // MARK: - Dependencies
     private let loadingViewControllerProvider: LoadingViewControllerProvider
+    private let retryViewControllerProvider: RetryViewControllerProvider
+
     
-    init(loadingViewControllerProvider: LoadingViewControllerProvider) {
+    init(loadingViewControllerProvider: LoadingViewControllerProvider,
+         retryViewControllerProvider: RetryViewControllerProvider) {
         self.loadingViewControllerProvider = loadingViewControllerProvider
+        self.retryViewControllerProvider = retryViewControllerProvider
     }
 }
 
@@ -23,16 +27,16 @@ class CharactersListViewControllerFactory {
 typealias LoadErrorViewControllerDelegate = Any
 
 extension CharactersListViewControllerFactory {
-    func viewController(forState state: CharactersListState, loadErrorDelegate: LoadErrorViewControllerDelegate?) -> UIViewController {
+    func viewController(forState state: CharactersListState) -> UIViewController {
         switch state {
         case .loading(let detailText):
             return loadingViewControllerProvider.loadingViewController(detailText: detailText)
         case .charactersList:
             return UIViewController()
         case let .loadError(title, description, delegate):
-//            let loadErrorViewController = loadErrorViewControllerProvider.loadErrorViewController(descriptionText: description)
-//            loadErrorViewController.delegate = loadErrorDelegate
-            return UIViewController()
+            let retryViewController = retryViewControllerProvider.retryViewController(title: title, descriptionText: description)
+            retryViewController.delegate = delegate
+            return retryViewController
         }
     }
 }

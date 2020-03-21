@@ -13,3 +13,5 @@ public enum CharacterRepositoryError: Error {
     case marvelError(code: String, message: String)
     case unknow(Error)
 }
+
+

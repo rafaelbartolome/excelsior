@@ -47,8 +47,7 @@ class CharactersListContainerViewController: UIViewController {
 
 extension CharactersListContainerViewController: CharactersListContainerView {
     func showView(forState state: CharactersListState) {
-        let viewController = charactersListViewControllerFactory.viewController(forState: state,
-                                                                                loadErrorDelegate: self) //TODO
+        let viewController = charactersListViewControllerFactory.viewController(forState: state)
         #warning("TODO: check if is needed to clear previous vc")
         setContentViewController(viewController, in: view)
     }
