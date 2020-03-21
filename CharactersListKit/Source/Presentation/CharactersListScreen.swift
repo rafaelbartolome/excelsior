@@ -11,6 +11,12 @@ import NavigatorKit
 import UIKit
 
 class CharactersListScreen: Screen {
+    private unowned let charactersListViewControllerProvider: CharactersListViewControllerProvider
+    
+    init(charactersListViewControllerProvider: CharactersListViewControllerProvider) {
+        self.charactersListViewControllerProvider = charactersListViewControllerProvider
+    }
+    
     func viewController(with params: ScreenParams?) -> UIViewController {
         #warning("TODO: WIP")
 

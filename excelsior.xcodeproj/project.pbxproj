@@ -37,6 +37,7 @@
 		24C13A0324266C0300AF4B68 /* CharactersList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C13A0224266C0300AF4B68 /* CharactersList.storyboard */; };
 		24C13A0624266C3500AF4B68 /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A0524266C3500AF4B68 /* CharactersListViewController.swift */; };
 		24C13A0824266CA900AF4B68 /* CharactersListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A0724266CA900AF4B68 /* CharactersListScreen.swift */; };
+		24C13A0A24266FB800AF4B68 /* CharactersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A0924266FB800AF4B68 /* CharactersListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,7 @@
 		24C13A0224266C0300AF4B68 /* CharactersList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharactersList.storyboard; sourceTree = "<group>"; };
 		24C13A0524266C3500AF4B68 /* CharactersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewController.swift; sourceTree = "<group>"; };
 		24C13A0724266CA900AF4B68 /* CharactersListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListScreen.swift; sourceTree = "<group>"; };
+		24C13A0924266FB800AF4B68 /* CharactersListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -458,6 +460,7 @@
 			children = (
 				24C13A0724266CA900AF4B68 /* CharactersListScreen.swift */,
 				24C13A0524266C3500AF4B68 /* CharactersListViewController.swift */,
+				24C13A0924266FB800AF4B68 /* CharactersListPresenter.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -811,6 +814,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C13A0A24266FB800AF4B68 /* CharactersListPresenter.swift in Sources */,
 				24C13A0624266C3500AF4B68 /* CharactersListViewController.swift in Sources */,
 				24C13A0824266CA900AF4B68 /* CharactersListScreen.swift in Sources */,
 				24C13A0024266B7B00AF4B68 /* CharactersListKitAssembly.swift in Sources */,
