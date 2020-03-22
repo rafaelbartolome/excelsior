@@ -68,9 +68,12 @@ extension CharactersListKitAssembly: CharactersListContainerViewControllerProvid
 }
 
 extension CharactersListKitAssembly: CharactersListViewControllerProvider {
-    func charactersListViewController(characters: [CharacterListModel]) -> CharactersListViewController {
-        CharactersListViewController(charactersListPresenter: charactersListPresenter(characters: characters),
-                                     cellBinderProvider: self)
+    func charactersListViewController(characters: [CharacterListModel], offset: Int, delegate: CharactersListPresenterDelegate) -> CharactersListViewController {
+        let presenter = charactersListPresenter(characters: characters)
+        presenter.delegate = delegate
+        return CharactersListViewController(charactersListPresenter: presenter,
+                                            cellBinderProvider: self,
+                                            offset: offset)
     }
 }
 

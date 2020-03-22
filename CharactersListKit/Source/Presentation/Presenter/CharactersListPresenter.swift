@@ -9,9 +9,15 @@
 import Foundation
 import CommonUIKit
 
+protocol CharactersListPresenterDelegate: AnyObject {
+    func loadMore()
+}
+
 /// CharactersListPresenter is the presenter for the list of characters
 final class CharactersListPresenter {
     private let characters: [CharacterListModel]
+    
+    weak var delegate: CharactersListPresenterDelegate?
     
     // MARK: - Dependencies
     private let navigator: CharacterDetailNavigator
@@ -30,7 +36,11 @@ extension CharactersListPresenter {
     }
     
     func character(for index: Int) -> CharacterListModel {
-        characters[index]
+        if index == characters.count - 1 {
+            delegate?.loadMore()
+        }
+        
+        return characters[index]
     }
         
     func characterSelected(at index: Int) {

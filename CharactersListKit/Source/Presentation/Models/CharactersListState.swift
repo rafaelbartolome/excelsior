@@ -12,6 +12,8 @@ import CommonUIKit
 /// States of character list and associated values (Sum type)
 enum CharactersListState {
     case loading(String)
-    case charactersList([CharacterListModel])
+    case charactersList([CharacterListModel],
+        offset: Int,
+        delegate: CharactersListPresenterDelegate)
     case loadError(title: String, description: String, delegate: RetryViewControllerDelegate)
 }

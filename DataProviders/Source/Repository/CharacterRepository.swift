@@ -23,8 +23,7 @@ class InternalCharacterRepository {
     let characterService: CharacterServiceProtocol
     
     init(characterService: CharacterServiceProtocol) {
-        #warning("TODO: WIP multicast delegate")
-
+        //TODO: Implement multicast delegate to inform to upper layers that the data has been updated")
         self.characterService = characterService
     }
 }
@@ -33,12 +32,12 @@ extension InternalCharacterRepository: CharacterRepository{
     func characters(nameStartsWith: String?,
                     offset: Int?,
                     completion: @escaping CharactersCompletion) {
-        #warning("TODO: WIP storage")
+        //TODO: Implement an storage with the retrieved data to limit network calls when the characters are already loaded (for the detail)
         characterService.characters(nameStartsWith: nameStartsWith, offset: offset, completion: completion)
     }
     
     func character(with id: Int, completion: @escaping CharacterCompletion) {
-        #warning("TODO: WIP storage")
+        //TODO: Check at the storage if the character is already loaded
         characterService.character(with: id, completion: completion)
     }
 }

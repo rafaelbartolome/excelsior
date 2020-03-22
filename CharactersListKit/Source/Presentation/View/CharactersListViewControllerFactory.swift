@@ -31,8 +31,10 @@ extension CharactersListViewControllerFactory {
         switch state {
         case .loading(let detailText):
             return loadingViewControllerProvider.loadingViewController(detailText: detailText)
-        case .charactersList(let characters):
-            let charactersListViewController = charactersListViewControllerProvider.charactersListViewController(characters: characters)
+        case let .charactersList(characters, offset, delegate):
+            let charactersListViewController = charactersListViewControllerProvider.charactersListViewController(characters: characters,
+                                                                                                                 offset: offset,
+                                                                                                                 delegate: delegate)
             return charactersListViewController
         case let .loadError(title, description, delegate):
             let retryViewController = retryViewControllerProvider.retryViewController(title: title, descriptionText: description)

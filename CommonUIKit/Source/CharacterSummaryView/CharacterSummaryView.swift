@@ -54,8 +54,8 @@ public final class CharacterSummaryView: UIView {
 private extension CharacterSummaryView {
     private enum Constants {
         static let cornerRadius: CGFloat = 6
-        static let contentSpacing: CGFloat = 24
-        static let contentInset = UIEdgeInsets(top: 16, left: 24, bottom: 16, right: 16)
+        static let contentSpacing: CGFloat = 16
+        static let contentInset = UIEdgeInsets(top: 16, left: 12, bottom: 16, right: 16)
         static let iconSize = CGSize(width: 80, height: 80)
         static let textSpacing: CGFloat = 8
         static let borderWidth: CGFloat = 1
@@ -104,10 +104,12 @@ private extension CharacterSummaryView {
         headerLabel.textColor = .black
         headerLabel.numberOfLines = 1
         headerLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        headerLabel.minimumScaleFactor = 0.8
         
         textLabel.textColor = .darkGray
         textLabel.numberOfLines = 0
         textLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        textLabel.minimumScaleFactor = 0.8
         
         let textContentView = UIStackView(arrangedSubviews: [headerLabel, textLabel])
         textContentView.axis = .vertical

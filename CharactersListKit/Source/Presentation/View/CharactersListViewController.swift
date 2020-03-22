@@ -11,7 +11,9 @@ import UIKit
 import CommonUIKit
 
 protocol CharactersListViewControllerProvider: AnyObject {
-    func charactersListViewController(characters: [CharacterListModel]) -> CharactersListViewController
+    func charactersListViewController(characters: [CharacterListModel],
+                                      offset: Int,
+                                      delegate: CharactersListPresenterDelegate) -> CharactersListViewController
 }
 
 /// CharactersListViewController is the view controller that representes the view in state loaded with the right data
@@ -25,11 +27,14 @@ final class CharactersListViewController: UITableViewController {
     
     private let presenter: CharactersListPresenter
     private let cellBinderProvider: CharacterListCellBinderProvider
+    private var offset: Int = 0
     
     init(charactersListPresenter: CharactersListPresenter,
-         cellBinderProvider: CharacterListCellBinderProvider) {
+         cellBinderProvider: CharacterListCellBinderProvider,
+         offset: Int) {
         presenter = charactersListPresenter
         self.cellBinderProvider = cellBinderProvider
+        self.offset = offset
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -41,6 +46,16 @@ final class CharactersListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if offset > 0 {
+            tableView.scrollToRow(at: IndexPath(row: offset, section: 0),
+                                  at: .bottom,
+                                  animated: false)
+            offset = 0
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
