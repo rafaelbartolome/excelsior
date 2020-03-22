@@ -1,9 +1,9 @@
 # Excelsior
 ### Just playing with Marvel Open API in a demo project.
 
-The idea behind this project is to develop an iOS app with an scalable architecture , puting into pracctice several design patterns.
-
-Due to that, some parts are quite over-engienered as the main goal is to design a solid architecture, this code is not production ready.
+The idea behind this project is to develop an iOS app with an scalable architecture , putting into practice several design patterns.
+ 
+Due to that, some parts are quite over-engineered as the main goal is to design a solid architecture, this code is not production ready.
 
 [![Twitter](https://img.shields.io/badge/main_contributor-Rafael%20Bartolome-orange)](http://twitter.com/rafaelbartolome)
 [![Swift](https://img.shields.io/badge/swift-5.2-green)](https://swift.org)
@@ -13,46 +13,69 @@ Due to that, some parts are quite over-engienered as the main goal is to design 
 
 ### Disclaimer
 
-Talking about architectures is quite hard as everibody has a preferred one, normaly the one that works better for solving a specific problem.
+Talking about architectures is quite hard as everybody has a preferred one, normally the one that works better for solving a specific problem.
+ 
+Please, be open minded with this repo. The idea is to develop several patterns that have solved problems in projects I worked on over the last years.
 
-Please, be open minded with this repo. The idea is to develop several patterns that has solved problems in projects I worked on over the last years.
-
-The main objetive is not to develop a **perfect** architecture (That's not a real thing) but to try to solve a common problem, make a scalable architecture, divided in several independent frameworks in order to allow the colavoration of a **big** number of developers in a **huge** project with as many conflicts as possible.
+The main objective is not to develop a **perfect** architecture (That's not a real thing) but to try to solve a common problem, make a scalable architecture, divided in several independent frameworks in order to allow the collaboration of a **big** number of developers in a **huge** project with as many conflicts as possible.
 
 ### Vertical vs horizontal frameworks
 
-**Horizontal frameworks** are great for base layers to be used by several teams. Problem is that it's easy to generate conflicts as everybody needs to touch common code all time to develop a new feature.
+• **Horizontal frameworks** are great for base layers to be used by several teams. Problem is that it's easy to generate conflicts as everybody needs to touch common code all time to develop a new feature.
 
 ![Horizontal frameworks](Doc/horizontal-fmw.png)
 
-**Vertical frameworks** are great to avoid conflics between several teams, as one team only needs to modify (or create) a framework for a functionality. Problem is that part of the code will be repeated (ex: the part that control network events) or diseminated in several parts.
+• **Vertical frameworks** are great to avoid conflict between several teams, as one team only needs to modify (or create) a framework for a functionality. Problem is that part of the code will be repeated (ex: the part that controls network events) or disseminated in several parts.
 
 ![Vertical frameworks](Doc/vertical-fmw.png)
 
-**Mixed approach**, why not having the best from both worlds? Well, that's complicated. Creating a mixed approach with horizontal frameworks for common code parts and vertical features has a lot of challenges but it looks as the best approach for big applications.
-Main challenge is to define the boundaries of each framework and define how is responsable of maintain the common parts.
+• **Mixed approach** Why not having the best from both worlds? Well, that's complicated. Creating a mixed approach with horizontal frameworks for common code parts and vertical features has a lot of challenges but it looks as the best approach for big applications.
+Main challenge is to define the boundaries of each framework and define how is responsible of maintain the common parts
+.
 
 ![Vertical frameworks](Doc/mixed-fmw.png)
 
-### Frameworks architecture
+## 🏗Frameworks architecture
 
-TODO: Describe final architecture
+Finally, for this demo I decided to implement a mixed approach, with some horizontal frameworks that provides common functionality and horizontal frameworks for each main feature
+- **AppCoreKit** that maneges the app lifecycle and initializes all other frameworks.
+- **NavigationKit** that allows us to navigate between features.
+- **CommonUIKit**  with all common views, fonts, styles and assets.
+- **ToolsKit** that contains common code, utils, etc.
+- **DataProviders** that implements the repository pattern to hide network or storage complexity to upper layers
+- **APIClient** that contains the Marvel API client used in this demo project
 
-### FEatures internal architecture
+![Frameworks](Doc/frameworks.png)
 
-TODO: describe internal arch
+### 🏠Features internal architecture
+
+For the internal construction of each feature I opted for the Model-View-Presenter approach, with an interactor that provides the data through a repository.
+ 
+Is an extension from VIPER architecture, but having the *entities* in *repositories* and using a *Navigator* instead of a *Router*.
+For the building of all parts of the app, *Assemblies* are used, that allow dependency inversion through layers due to the injection of dependencies. This approach facilitates testing as all dependencies are injected during the construction of the objects.
+Also most boundaries between layers are defined by protocols to avoid coupling the code. This abstraction also allows to create test doubles for the unit tests.
 
 
 
-TODO: 
-API Client Moya, Moya’s approach doesn’t scale with medium to big teams. You end up with a single [big enum type](https://github.com/Moya/Moya/blob/master/docs/Examples/Basic.md) that contains lots of details. Merge conflicts within that file will certainly arise, and generally, the end file will be hard to process. The "open/close" principle of SOLID is broken.
+![Internal architecture](Doc/architecture.png)
 
 
+For the API client, there are several public frameworks to consider, like Moya, but finally I decided to use a custom implementation as Moya’s approach doesn’t scale with medium to big teams. With Moya you end up with a single [big enum type](https://github.com/Moya/Moya/blob/master/docs/Examples/Basic.md) that contains lots of details. Merge conflicts within that file will certainly arise, and generally, the end file will be hard to process. The "open/close" principle of SOLID is broken.
 
 ## 📌 Features 
 
 - [x] List of Marvel characters.
 - [x] Detail of a specific character.
+
+## 😬 Todo 
+
+- [ ] Add tests to the other feature.
+- [ ] Improve the way the list behaves when new data arrives.
+- [ ] Implement a multicast delegate in the repo to inform upper layers for data changes.
+- [ ] Implement an storage to avoid unnecessary network calls to ask for characters already loaded.
+- [ ] Implement an API client with stub responses in order to improve UI tests.
+- [ ] Localization
+- [ ] Integrate project with a CI service tool to automate all the things.
 
 ## ⚙️ Requirements
 
