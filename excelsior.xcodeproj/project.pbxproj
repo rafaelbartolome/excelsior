@@ -16,6 +16,19 @@
 		245593C724277E2D004E0126 /* CharacterDetailKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 245593B724277E2D004E0126 /* CharacterDetailKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		245593CA24277E2D004E0126 /* CharacterDetailKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 245593B524277E2D004E0126 /* CharacterDetailKit.framework */; };
 		245593CB24277E2D004E0126 /* CharacterDetailKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 245593B524277E2D004E0126 /* CharacterDetailKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		245593D924277ED2004E0126 /* CharacterDetailKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593D824277ED2004E0126 /* CharacterDetailKitAssembly.swift */; };
+		245593DC24277F95004E0126 /* CharacterDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593DB24277F95004E0126 /* CharacterDetailScreen.swift */; };
+		245593E024278021004E0126 /* CharacterDetailContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593DF24278021004E0126 /* CharacterDetailContainerViewController.swift */; };
+		245593E32427809E004E0126 /* CharacterDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593E22427809D004E0126 /* CharacterDetailState.swift */; };
+		245593E5242780D8004E0126 /* CharacterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593E4242780D8004E0126 /* CharacterDetail.swift */; };
+		245593E72427813A004E0126 /* CharacterDetailError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593E62427813A004E0126 /* CharacterDetailError.swift */; };
+		245593E92427817B004E0126 /* CharacterDetailContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593E82427817B004E0126 /* CharacterDetailContainerPresenter.swift */; };
+		245593EB24278199004E0126 /* CharacterDetailViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593EA24278199004E0126 /* CharacterDetailViewControllerFactory.swift */; };
+		245593ED242782F3004E0126 /* CaracterDetailContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593EC242782F3004E0126 /* CaracterDetailContainerView.swift */; };
+		245593F0242784A2004E0126 /* GetCharacterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593EF242784A2004E0126 /* GetCharacterDetail.swift */; };
+		245593F224278610004E0126 /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593F124278610004E0126 /* CharacterDetailPresenter.swift */; };
+		245593F524278777004E0126 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593F324278777004E0126 /* CharacterDetailViewController.swift */; };
+		245593F624278777004E0126 /* CharacterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 245593F424278777004E0126 /* CharacterDetailViewController.xib */; };
 		2483C83B242605F40069B067 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2483C839242605F40069B067 /* LaunchScreen.storyboard */; };
 		2483C851242605F40069B067 /* excelsiorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2483C850242605F40069B067 /* excelsiorUITests.swift */; };
 		2483C86C2426080D0069B067 /* AppCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2483C8632426080D0069B067 /* AppCoreKit.framework */; };
@@ -300,6 +313,19 @@
 		245593BD24277E2D004E0126 /* CharacterDetailKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharacterDetailKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		245593C424277E2D004E0126 /* CharacterDetailKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailKitTests.swift; sourceTree = "<group>"; };
 		245593C624277E2D004E0126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		245593D824277ED2004E0126 /* CharacterDetailKitAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailKitAssembly.swift; sourceTree = "<group>"; };
+		245593DB24277F95004E0126 /* CharacterDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailScreen.swift; sourceTree = "<group>"; };
+		245593DF24278021004E0126 /* CharacterDetailContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailContainerViewController.swift; sourceTree = "<group>"; };
+		245593E22427809D004E0126 /* CharacterDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailState.swift; sourceTree = "<group>"; };
+		245593E4242780D8004E0126 /* CharacterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetail.swift; sourceTree = "<group>"; };
+		245593E62427813A004E0126 /* CharacterDetailError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailError.swift; sourceTree = "<group>"; };
+		245593E82427817B004E0126 /* CharacterDetailContainerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailContainerPresenter.swift; sourceTree = "<group>"; };
+		245593EA24278199004E0126 /* CharacterDetailViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewControllerFactory.swift; sourceTree = "<group>"; };
+		245593EC242782F3004E0126 /* CaracterDetailContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaracterDetailContainerView.swift; sourceTree = "<group>"; };
+		245593EF242784A2004E0126 /* GetCharacterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharacterDetail.swift; sourceTree = "<group>"; };
+		245593F124278610004E0126 /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
+		245593F324278777004E0126 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		245593F424278777004E0126 /* CharacterDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailViewController.xib; sourceTree = "<group>"; };
 		2483C82B242605F20069B067 /* excelsior.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = excelsior.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2483C82E242605F20069B067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2483C837242605F40069B067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -557,6 +583,10 @@
 			isa = PBXGroup;
 			children = (
 				245593B724277E2D004E0126 /* CharacterDetailKit.h */,
+				245593D824277ED2004E0126 /* CharacterDetailKitAssembly.swift */,
+				245593E124278087004E0126 /* Models */,
+				245593DA24277F87004E0126 /* Presentation */,
+				245593EE2427848D004E0126 /* Interactors */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -567,6 +597,55 @@
 				245593B824277E2D004E0126 /* Info.plist */,
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		245593DA24277F87004E0126 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				245593DB24277F95004E0126 /* CharacterDetailScreen.swift */,
+				245593DD24277FE8004E0126 /* View */,
+				245593DE24277FED004E0126 /* Presenter */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		245593DD24277FE8004E0126 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				245593EC242782F3004E0126 /* CaracterDetailContainerView.swift */,
+				245593DF24278021004E0126 /* CharacterDetailContainerViewController.swift */,
+				245593EA24278199004E0126 /* CharacterDetailViewControllerFactory.swift */,
+				245593F324278777004E0126 /* CharacterDetailViewController.swift */,
+				245593F424278777004E0126 /* CharacterDetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		245593DE24277FED004E0126 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				245593E82427817B004E0126 /* CharacterDetailContainerPresenter.swift */,
+				245593F124278610004E0126 /* CharacterDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		245593E124278087004E0126 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				245593E4242780D8004E0126 /* CharacterDetail.swift */,
+				245593E62427813A004E0126 /* CharacterDetailError.swift */,
+				245593E22427809D004E0126 /* CharacterDetailState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		245593EE2427848D004E0126 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				245593EF242784A2004E0126 /* GetCharacterDetail.swift */,
+			);
+			path = Interactors;
 			sourceTree = "<group>";
 		};
 		2483C822242605F20069B067 = {
@@ -815,12 +894,12 @@
 		24C13A0B242673B500AF4B68 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				24C13A1624267F4A00AF4B68 /* CharactersListViewControllerFactory.swift */,
 				24C13A0D242673DB00AF4B68 /* CharactersListContainerView.swift */,
 				24C13A0524266C3500AF4B68 /* CharactersListContainerViewController.swift */,
 				24C13AA724274B4300AF4B68 /* CharactersListViewController.swift */,
 				24C13AA924274C1A00AF4B68 /* CharactersListCell.swift */,
 				24C13ABA242768E700AF4B68 /* CharacterListCellBinder.swift */,
+				24C13A1624267F4A00AF4B68 /* CharactersListViewControllerFactory.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1422,6 +1501,7 @@
 					};
 					245593B424277E2D004E0126 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					245593BC24277E2D004E0126 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -1522,6 +1602,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				245593F624278777004E0126 /* CharacterDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1638,6 +1719,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				245593ED242782F3004E0126 /* CaracterDetailContainerView.swift in Sources */,
+				245593F524278777004E0126 /* CharacterDetailViewController.swift in Sources */,
+				245593DC24277F95004E0126 /* CharacterDetailScreen.swift in Sources */,
+				245593F224278610004E0126 /* CharacterDetailPresenter.swift in Sources */,
+				245593E92427817B004E0126 /* CharacterDetailContainerPresenter.swift in Sources */,
+				245593F0242784A2004E0126 /* GetCharacterDetail.swift in Sources */,
+				245593D924277ED2004E0126 /* CharacterDetailKitAssembly.swift in Sources */,
+				245593E5242780D8004E0126 /* CharacterDetail.swift in Sources */,
+				245593EB24278199004E0126 /* CharacterDetailViewControllerFactory.swift in Sources */,
+				245593E32427809E004E0126 /* CharacterDetailState.swift in Sources */,
+				245593E024278021004E0126 /* CharacterDetailContainerViewController.swift in Sources */,
+				245593E72427813A004E0126 /* CharacterDetailError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1962,6 +2055,7 @@
 		245593CD24277E2D004E0126 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1980,6 +2074,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = es.rafaelbartolome.CharacterDetailKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1990,6 +2085,7 @@
 		245593CE24277E2D004E0126 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

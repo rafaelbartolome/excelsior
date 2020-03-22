@@ -19,7 +19,7 @@ public final class CharactersListKitAssembly {
     
     private let commonUIKit: CommonUIKitAssembly
     private let dataProviders: DataProvidersAssembly
-     private let dateFormmater: DateFormatter
+    private let dateFormmater: DateFormatter
     
     public init(commonUIKit: CommonUIKitAssembly,
                 dataProviders: DataProvidersAssembly,
