@@ -492,6 +492,8 @@
 		24C13AB42427520900AF4B68 /* UITableViewCell+tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+tools.swift"; sourceTree = "<group>"; };
 		24C13AB62427592B00AF4B68 /* CharacterListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListModel.swift; sourceTree = "<group>"; };
 		24C13ABA242768E700AF4B68 /* CharacterListCellBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCellBinder.swift; sourceTree = "<group>"; };
+		24EFD4C12427EA9E002225E6 /* UI Test.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "UI Test.xctestplan"; sourceTree = "<group>"; };
+		24EFD4C22427EAB8002225E6 /* Unit Test.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Unit Test.xctestplan"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -848,10 +850,10 @@
 				245593A624277DE4004E0126 /* DataProvidersTests */,
 				24C139D8242660F800AF4B68 /* NavigatorKit */,
 				24C139E5242660F800AF4B68 /* NavigatorKitTests */,
-				24C13A842426BFE100AF4B68 /* ToolsKit */,
-				2483C84F242605F40069B067 /* UITests */,
 				2455940A2427BCA6004E0126 /* MarvelClient */,
 				245594172427BCA6004E0126 /* MarvelClientTests */,
+				24C13A842426BFE100AF4B68 /* ToolsKit */,
+				2483C84F242605F40069B067 /* UITests */,
 				2483C82C242605F20069B067 /* Products */,
 				2455939A242776A7004E0126 /* Frameworks */,
 			);
@@ -939,6 +941,8 @@
 		24C139A02426109200AF4B68 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				24EFD4C22427EAB8002225E6 /* Unit Test.xctestplan */,
+				24EFD4C12427EA9E002225E6 /* UI Test.xctestplan */,
 				24C139A12426109200AF4B68 /* Info.plist */,
 			);
 			path = SupportFiles;
@@ -2720,7 +2724,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4UTK9SZQT;
-				INFOPLIST_FILE = excelsiorUITests/Info.plist;
+				INFOPLIST_FILE = UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2740,7 +2744,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4UTK9SZQT;
-				INFOPLIST_FILE = excelsiorUITests/Info.plist;
+				INFOPLIST_FILE = UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "711CE3CC-EAD7-4AEA-B551-2CFEDE820ED0",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:excelsior.xcodeproj",
+        "identifier" : "2483C84B242605F40069B067",
+        "name" : "excelsiorUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

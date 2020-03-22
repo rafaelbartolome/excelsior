@@ -15,20 +15,18 @@ apiClient.send(GetCharacters()) { response in
     
     response.map { dataContainer in
         for character in dataContainer.results {
-            print("  Char: \(character)")
-            print("  Title: \(character.name ?? "Unnamed character")")
+            print("  Name: \(character.name ?? "Unnamed character")")
             print("  Thumbnail: \(character.thumbnail?.url.absoluteString ?? "None")")
         }
     }
 }
 
 apiClient.send(GetCharacter(characterId: 1011136)){ response in
-    print("\nGetCharacters finished:")
+    print("\nGetCharacter finished:")
     
     response.map { dataContainer in
         for character in dataContainer.results {
-            print("  Char: \(character)")
-            print("  Title: \(character.name ?? "Unnamed character")")
+            print("  Name: \(character.name ?? "Unnamed character")")
             print("  Thumbnail: \(character.thumbnail?.url.absoluteString ?? "None")")
         }
     }

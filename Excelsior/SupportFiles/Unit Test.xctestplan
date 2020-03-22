@@ -1,0 +1,66 @@
+{
+  "configurations" : [
+    {
+      "id" : "AFF457C3-C4A6-4F1E-8303-7DFD6D1EF49F",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:excelsior.xcodeproj",
+        "identifier" : "2483C86A2426080D0069B067",
+        "name" : "AppCoreKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:excelsior.xcodeproj",
+        "identifier" : "245593BC24277E2D004E0126",
+        "name" : "CharacterDetailKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:excelsior.xcodeproj",
+        "identifier" : "24C139B52426370C00AF4B68",
+        "name" : "CharactersListKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:excelsior.xcodeproj",
+        "identifier" : "24C13A262426824800AF4B68",
+        "name" : "CommonUIKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:excelsior.xcodeproj",
+        "identifier" : "245593A424277DE4004E0126",
+        "name" : "DataProvidersTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:excelsior.xcodeproj",
+        "identifier" : "245594102427BCA6004E0126",
+        "name" : "MarvelClientTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:excelsior.xcodeproj",
+        "identifier" : "24C139DE242660F800AF4B68",
+        "name" : "NavigatorKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}
