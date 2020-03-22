@@ -7,18 +7,19 @@
 //
 
 import Foundation
+import CommonUIKit
 
 /// CharactersListPresenter is the presenter for the list of characters
 final class CharactersListPresenter {
     private let characters: [CharacterListModel]
     
     // MARK: - Dependencies
-//    private let navigator: Navigator
+    private let navigator: CharacterDetailNavigator
     
-    init(characters: [CharacterListModel]){
-//         navigator: Navigator) {
+    init(characters: [CharacterListModel],
+         navigator: CharacterDetailNavigator) {
         self.characters = characters
-//        self.navigator = navigator
+        self.navigator = navigator
     }
 }
 
@@ -33,10 +34,8 @@ extension CharactersListPresenter {
     }
         
     func characterSelected(at index: Int) {
-        #warning("TODO: WIP navigate to detail")
-        print("Navigating to character detail")
-//        let character = characters[index]
-//        navigator.navigateToCharacterDetail(withIdentifier: character.id)
+        let character = characters[index]
+        navigator.navigateToCharacterDetail(withIdentifier: character.id)
     }
 }
 

@@ -29,6 +29,9 @@
 		245593F224278610004E0126 /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593F124278610004E0126 /* CharacterDetailPresenter.swift */; };
 		245593F524278777004E0126 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593F324278777004E0126 /* CharacterDetailViewController.swift */; };
 		245593F624278777004E0126 /* CharacterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 245593F424278777004E0126 /* CharacterDetailViewController.xib */; };
+		245593F82427A97D004E0126 /* CharacterDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593F72427A97D004E0126 /* CharacterDetailNavigator.swift */; };
+		245593FA2427AEB6004E0126 /* CharacterDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593F92427AEB6004E0126 /* CharacterDetailNavigator.swift */; };
+		245593FD2427B075004E0126 /* CharacterDetailContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 245593FC2427B075004E0126 /* CharacterDetailContainer.storyboard */; };
 		2483C83B242605F40069B067 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2483C839242605F40069B067 /* LaunchScreen.storyboard */; };
 		2483C851242605F40069B067 /* excelsiorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2483C850242605F40069B067 /* excelsiorUITests.swift */; };
 		2483C86C2426080D0069B067 /* AppCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2483C8632426080D0069B067 /* AppCoreKit.framework */; };
@@ -326,6 +329,9 @@
 		245593F124278610004E0126 /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
 		245593F324278777004E0126 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		245593F424278777004E0126 /* CharacterDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailViewController.xib; sourceTree = "<group>"; };
+		245593F72427A97D004E0126 /* CharacterDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailNavigator.swift; sourceTree = "<group>"; };
+		245593F92427AEB6004E0126 /* CharacterDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailNavigator.swift; sourceTree = "<group>"; };
+		245593FC2427B075004E0126 /* CharacterDetailContainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterDetailContainer.storyboard; sourceTree = "<group>"; };
 		2483C82B242605F20069B067 /* excelsior.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = excelsior.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2483C82E242605F20069B067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2483C837242605F40069B067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -565,6 +571,7 @@
 			isa = PBXGroup;
 			children = (
 				245593D224277E37004E0126 /* Source */,
+				245593FB2427B05B004E0126 /* Resources */,
 				245593D324277E3E004E0126 /* SupportFiles */,
 			);
 			path = CharacterDetailKit;
@@ -602,6 +609,7 @@
 		245593DA24277F87004E0126 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				245593F72427A97D004E0126 /* CharacterDetailNavigator.swift */,
 				245593DB24277F95004E0126 /* CharacterDetailScreen.swift */,
 				245593DD24277FE8004E0126 /* View */,
 				245593DE24277FED004E0126 /* Presenter */,
@@ -646,6 +654,14 @@
 				245593EF242784A2004E0126 /* GetCharacterDetail.swift */,
 			);
 			path = Interactors;
+			sourceTree = "<group>";
+		};
+		245593FB2427B05B004E0126 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				245593FC2427B075004E0126 /* CharacterDetailContainer.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		2483C822242605F20069B067 = {
@@ -945,12 +961,13 @@
 		24C13A3C2426826200AF4B68 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				24C13AAE2427505700AF4B68 /* Extensions */,
 				24C13A212426824800AF4B68 /* CommonUIKit.h */,
 				24C13A432426848B00AF4B68 /* CommonUIKitAssembly.swift */,
 				24C13A9A2426C6C000AF4B68 /* RetryViewController */,
 				24C13A6B2426B65A00AF4B68 /* LoadingViewController */,
 				24C13AAD24274CB300AF4B68 /* CharacterSummaryView */,
+				24C13AAE2427505700AF4B68 /* Extensions */,
+				245593F92427AEB6004E0126 /* CharacterDetailNavigator.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1603,6 +1620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				245593F624278777004E0126 /* CharacterDetailViewController.xib in Resources */,
+				245593FD2427B075004E0126 /* CharacterDetailContainer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1727,6 +1745,7 @@
 				245593F0242784A2004E0126 /* GetCharacterDetail.swift in Sources */,
 				245593D924277ED2004E0126 /* CharacterDetailKitAssembly.swift in Sources */,
 				245593E5242780D8004E0126 /* CharacterDetail.swift in Sources */,
+				245593F82427A97D004E0126 /* CharacterDetailNavigator.swift in Sources */,
 				245593EB24278199004E0126 /* CharacterDetailViewControllerFactory.swift in Sources */,
 				245593E32427809E004E0126 /* CharacterDetailState.swift in Sources */,
 				245593E024278021004E0126 /* CharacterDetailContainerViewController.swift in Sources */,
@@ -1832,6 +1851,7 @@
 				24C13AA02426C99000AF4B68 /* RetryViewControllerDelegate.swift in Sources */,
 				24C13AB02427506E00AF4B68 /* UIView+tools.swift in Sources */,
 				24C13AB52427520900AF4B68 /* UITableViewCell+tools.swift in Sources */,
+				245593FA2427AEB6004E0126 /* CharacterDetailNavigator.swift in Sources */,
 				24C13A41242682B300AF4B68 /* LoadingViewController.swift in Sources */,
 				24C13A442426848B00AF4B68 /* CommonUIKitAssembly.swift in Sources */,
 				24C13A9D2426C6DD00AF4B68 /* RetryViewController.swift in Sources */,

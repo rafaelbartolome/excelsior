@@ -10,6 +10,7 @@ import Foundation
 import NavigatorKit
 import CommonUIKit
 import CharactersListKit
+import CharacterDetailKit
 import DataProviders
 import UIKit
 
@@ -29,12 +30,7 @@ public final class AppCoreKitAssembly {
     // Setup navigation kit
     private lazy var navigatorKit = NavigatorKitAssembly(window: Self.window)
     private lazy var mainNavigator = navigatorKit.navigator()
-    
-    // SetUp first feature framework - Characters list
-    private lazy var charactersListKit = CharactersListKitAssembly(commonUIKit: commonUIKit,
-                                                                   dataProviders: dataProviders,
-                                                                   dateFormmater: dateFormatter)
-    
+       
     // SetUp the launch coordinator with the first screen
     lazy var appLaunchCoordinator = AppLaunchCoordinator(mainNavigator: mainNavigator,
                                                                  firstScreen: charactersListKit.mainScreen)
@@ -53,4 +49,15 @@ public final class AppCoreKitAssembly {
         return formatter
     }()
 
+    // SetUp first feature framework - Characters list
+    private lazy var charactersListKit = CharactersListKitAssembly(commonUIKit: commonUIKit,
+                                                                   dataProviders: dataProviders,
+                                                                   dateFormmater: dateFormatter,
+                                                                   characterDetailNavigatorProvider: characterDetailKit
+    )
+    // SetUp second feature framework - Character detail
+    private lazy var characterDetailKit = CharacterDetailKitAssembly(commonUIKit: commonUIKit,
+                                                                   dataProviders: dataProviders,
+                                                                   dateFormmater: dateFormatter,
+                                                                   mainNavigator: mainNavigator)
 }

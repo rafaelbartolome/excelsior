@@ -20,13 +20,16 @@ public final class CharactersListKitAssembly {
     private let commonUIKit: CommonUIKitAssembly
     private let dataProviders: DataProvidersAssembly
     private let dateFormmater: DateFormatter
+    private unowned var characterDetailNavigatorProvider: CharacterDetailNavigatorProvider
     
     public init(commonUIKit: CommonUIKitAssembly,
                 dataProviders: DataProvidersAssembly,
-                dateFormmater: DateFormatter) {
+                dateFormmater: DateFormatter,
+                characterDetailNavigatorProvider: CharacterDetailNavigatorProvider) {
         self.commonUIKit = commonUIKit
         self.dataProviders = dataProviders
         self.dateFormmater = dateFormmater
+        self.characterDetailNavigatorProvider = characterDetailNavigatorProvider
     }
     
     public var mainScreen : Screen {
@@ -49,7 +52,7 @@ public final class CharactersListKitAssembly {
     }
     
     func charactersListPresenter(characters: [CharacterListModel]) -> CharactersListPresenter {
-        CharactersListPresenter(characters: characters)
+        CharactersListPresenter(characters: characters, navigator: characterDetailNavigatorProvider.characterDetailNavigator())
     }
 }
 

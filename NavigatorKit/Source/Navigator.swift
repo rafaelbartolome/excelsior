@@ -20,7 +20,8 @@ public extension Navigator {
 }
 
 final class InternalNavigator: Navigator {
-    let window: UIWindow
+    private let window: UIWindow
+    private var navigationController: UINavigationController!
     
     init(window: UIWindow) {
         self.window = window
@@ -30,34 +31,39 @@ final class InternalNavigator: Navigator {
         switch navigation {
         case let .root(screen, params):
             setRootScreen(screen, with: params)
-        
-//        case .section(let section):
-//            tabBarController().selectedIndex = section.rawValue
-//
-//        case .modal(let screen):
-//            topMostViewController().present(
-//                screen.viewController(),
-//                animated: animated
-//            )
-//
-//        case .push(let screen):
-//            currentNavigationController().pushViewController(
-//                screen.viewController(),
-//                animated: animated
-//            )
-//        }
-        default:
-            #warning("TODO: WIP implement navigation modes")
-            print("TODO")
+        case let .present(screen, params):
+            let viewController = screen.viewController(with: params)
+            presentationViewController().present(
+                viewController,
+                animated: animated
+            )
+        case let .push(screen, params):
+            let viewController = screen.viewController(with: params)
+            navigationController.pushViewController(
+                viewController,
+                animated: animated
+            )
         }
     }
-    
 }
 
 private extension InternalNavigator {
     func setRootScreen(_ screen: Screen, with params: ScreenParams?) {
         let viewController = screen.viewController(with: params)
-        window.rootViewController = viewController
+        navigationController = UINavigationController(rootViewController: viewController)
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
+    }
+    
+    func presentationViewController() -> UIViewController{
+        if let vc = navigationController.visibleViewController {
+            return vc
+        }
+        
+        if let vc = navigationController.topViewController {
+            return vc
+        }
+        
+        return navigationController.viewControllers.last!
     }
 }

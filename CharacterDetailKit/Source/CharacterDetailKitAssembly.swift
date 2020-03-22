@@ -20,19 +20,20 @@ public final class CharacterDetailKitAssembly {
     private let commonUIKit: CommonUIKitAssembly
     private let dataProviders: DataProvidersAssembly
     private let dateFormmater: DateFormatter
+    private let mainNavigator: Navigator
     
     public init(commonUIKit: CommonUIKitAssembly,
                 dataProviders: DataProvidersAssembly,
-                dateFormmater: DateFormatter) {
+                dateFormmater: DateFormatter,
+                mainNavigator: Navigator) {
         self.commonUIKit = commonUIKit
         self.dataProviders = dataProviders
         self.dateFormmater = dateFormmater
+        self.mainNavigator = mainNavigator
     }
     
-    public var mainScreen : Screen {
-        CharacterDetailScreen(characterDetailContainerViewControllerProvider: self)
-    }
-    
+    private lazy var detailScreen = CharacterDetailScreen(characterDetailContainerViewControllerProvider: self)
+
     func characterDetailContainerPresenter(for characterId: CharacterId) -> CharacterDetailContainerPresenter {
         CharacterDetailContainerPresenter(getCharacterDetail: getCharacterDetail(),
                                           characterId: characterId)
@@ -52,6 +53,7 @@ public final class CharacterDetailKitAssembly {
     func characterDetailPresenter(character: CharacterDetail) -> CharacterDetailPresenter {
         CharacterDetailPresenter(character: character)
     }
+    
 }
 
 
@@ -69,5 +71,12 @@ extension CharacterDetailKitAssembly: CharacterDetailContainerViewControllerProv
 extension CharacterDetailKitAssembly: CharacterDetailViewControllerProvider {
     func characterDetailViewController(character: CharacterDetail) -> CharacterDetailViewController {
         CharacterDetailViewController(characterDetailPresenter: characterDetailPresenter(character: character))
+    }
+}
+
+extension CharacterDetailKitAssembly: CharacterDetailNavigatorProvider {
+    public func characterDetailNavigator() -> CharacterDetailNavigator {
+        InternalCharacterDetailNavigator(mainNavigator: mainNavigator,
+                                         detailScreen: detailScreen)
     }
 }

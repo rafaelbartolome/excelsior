@@ -18,12 +18,8 @@ public enum Navigation {
         Screen,
         ScreenParams? = nil
     )
-    case pop
     case present(
         Screen,
-        ScreenParams? = nil,
-        UIModalPresentationStyle = .fullScreen,
-        (() -> Void)? = nil //Completion
+        ScreenParams? = nil
     )
-    case dissmiss
 }
