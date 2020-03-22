@@ -17,3 +17,18 @@ enum CharactersListState {
         delegate: CharactersListPresenterDelegate)
     case loadError(title: String, description: String, delegate: RetryViewControllerDelegate)
 }
+
+extension CharactersListState: Equatable {
+    static func == (lhs: CharactersListState, rhs: CharactersListState) -> Bool {
+        switch (lhs, rhs) {
+        case (.loading, .loading):
+            return true
+        case (.charactersList(let lCharacters, _, _), .charactersList(let rCharacters, _, _)):
+            return lCharacters == rCharacters
+        case (.loadError, .loadError):
+            return true
+        default:
+            return false
+        }
+    }
+}

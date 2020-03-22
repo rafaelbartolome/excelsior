@@ -13,7 +13,7 @@ import CommonUIKit
 final class CharactersListContainerPresenter{
     weak var view: CharactersListContainerView!
     
-    private let getCharacters: GetCharacters
+    private let getCharacters: GetCharactersProtocol
     
     //TODO: Implement search
     private var searchString: String?
@@ -22,7 +22,7 @@ final class CharactersListContainerPresenter{
     // Flag to avoid concurrent calls
     private var loading = false
     
-    init(getCharacters: GetCharacters) {
+    init(getCharacters: GetCharactersProtocol) {
         self.getCharacters = getCharacters
     }
 }

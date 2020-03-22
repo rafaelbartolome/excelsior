@@ -9,7 +9,7 @@
 import Foundation
 import DataProviders
 
-struct CharacterListModel {
+struct CharacterListModel: Equatable {
     public let id: Int
     public let name: String
     public let thumbnailURL: URL?
