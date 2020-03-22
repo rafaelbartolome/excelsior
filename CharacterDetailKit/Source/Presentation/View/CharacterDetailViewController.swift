@@ -36,6 +36,7 @@ class CharacterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imageView.accessibilityIdentifier = "CharacterDetailViewController"
         presenter.didLoad()
     }
 }

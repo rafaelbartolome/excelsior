@@ -8,36 +8,52 @@
 
 import XCTest
 
+
+/// Just a couple of simple test here.
+/// I didn't have time to prepare a MarvelAPI stub that should returns valid data for those test instead of calling the real API
+/// Those are more integration test, but they are quite fragile as depend of external data out of out control and also timeouts due to
+/// the network dependency.
+
+
 class excelsiorUITests: XCTestCase {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // UI tests must launch the application that they test.
+  
+    func test_givenALoadedList_tappingInACell_detailIsPresented() {
+        // given
         let app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        _ = app.navigationBars["Character list"].waitForExistence(timeout: 5)
+        
+        // when
+        let tablesQuery = app.tables
+        let cell = tablesQuery.cells.containing(.staticText, identifier:"A.I.M.").element
+        _ = cell.waitForExistence(timeout: 5)
+        cell.tap()
+        
+        // then
+        let element = app.navigationBars["Character Detail"]
+        XCTAssert(element.waitForExistence(timeout: 5))
     }
-
-    func testLaunchPerformance() {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
-            }
-        }
+    
+    func test_givenACharacterDetail_tappingBack_listIsPresented() {
+        // given
+        let app = XCUIApplication()
+        app.launch()
+        let tablesQuery = app.tables
+        let cell = tablesQuery.cells.containing(.staticText, identifier:"A.I.M.").element
+        _ = cell.waitForExistence(timeout: 5)
+        cell.tap()
+        
+        // when
+        let characterListButton = app.navigationBars["Character Detail"].buttons["Character list"]
+        _ = characterListButton.waitForExistence(timeout: 5)
+        characterListButton.tap()
+        
+        // then
+        let element = app.navigationBars["Character list"]
+        XCTAssert(element.waitForExistence(timeout: 5))
     }
 }

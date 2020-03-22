@@ -94,5 +94,6 @@ private extension CharactersListViewController {
         tableView.estimatedRowHeight = Constants.rowHeight
         tableView.separatorStyle = .none
         tableView.contentInsetAdjustmentBehavior = .automatic
+        tableView.accessibilityIdentifier = "CharacterListViewController"
     }
 }
