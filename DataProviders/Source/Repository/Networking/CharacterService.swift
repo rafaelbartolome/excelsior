@@ -32,14 +32,18 @@ extension CharacterService: CharacterServiceProtocol {
         
         let c1 = Character(id: 1,
                            name: "Thor", bio: "Thor es guay",
-                           thumbnailURL: nil,
+                           thumbnailURL: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/7/30/5e67fba816991/portrait_uncanny.jpg")!,
                            modified: Date())
         let c2 = Character(id: 2,
                            name: "IronMan", bio: "Tambien es guay",
-                           thumbnailURL: nil,
+                           thumbnailURL: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/30/5e67aa73b0d81/portrait_uncanny.jpg")!,
                            modified: Date())
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            completion(.success([c1, c2]))
+        let c3 = Character(id: 3,
+                           name: "Super Lopez", bio: "Tambien es guay",
+                           thumbnailURL: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/30/4/portrait_uncanny.jpg")!,
+                           modified: Date())
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            completion(.success([c1, c2, c3]))
         }
         
     }

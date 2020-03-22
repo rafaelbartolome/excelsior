@@ -13,9 +13,8 @@ import UIKit
 public final class CharacterSummaryView: UIView {
     // MARK: - Properties
     
-    public var icon: UIImage? {
-        get { return iconView.image }
-        set { iconView.image = newValue }
+    public var icon: UIImageView {
+        get { return iconView }
     }
     
     public var header: String {
@@ -36,7 +35,9 @@ public final class CharacterSummaryView: UIView {
     private let iconView = UIImageView()
     private let headerLabel = UILabel()
     private let textLabel = UILabel()
-    private let accessoryImageView = UIImageView(image: UIImage(named: "icn_arrow_right"))
+    private let accessoryImageView = UIImageView(image: UIImage(named: "icn_arrow_right",
+                                                                in: Bundle(for: CharacterSummaryView.self),
+                                                                compatibleWith: nil))
     
     // MARK: - Initialization
     

@@ -47,9 +47,8 @@ private extension CharactersListCell {
 }
 
 extension CharactersListCell {
-    var icon: UIImage? {
+    var icon: UIImageView {
         get { return customView.icon }
-        set { customView.icon = newValue }
     }
     
     var header: String {

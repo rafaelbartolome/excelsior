@@ -12,7 +12,7 @@ import DataProviders
 struct CharacterListModel {
     public let id: Int
     public let name: String
-    public let bio: String
+    public let thumbnailURL: URL?
     public let modified: Date
 }
 
@@ -21,7 +21,7 @@ extension CharacterListModel {
     init(with character: Character) {
         id = character.id
         name = character.name
-        bio = character.bio
+        thumbnailURL = character.thumbnailURL
         modified = character.modified
     }
 }

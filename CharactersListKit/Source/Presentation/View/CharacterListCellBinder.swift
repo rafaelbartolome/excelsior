@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Kingfisher
+import UIKit
 
 /// CharacterListCellBinderProvider should be an abstract factory to return independent binders for different characters but for this example, just a binder is implemented
 protocol CharacterListCellBinderProvider {
@@ -25,9 +27,18 @@ class CharacterListCellBinder {
 
 extension CharacterListCellBinder {
     func bind(to cell: CharactersListCell) {
-        #warning("TODO: WIP bind cell")
         cell.header = character.name
         let dateString = dateFormatter.string(from: character.modified)
         cell.descriptionText = "Last updated: \(dateString)"
+        
+        let placeholder = UIImage(named: "avatar-placeholder",
+                                  in: Bundle(for: CharacterListCellBinder.self),
+                                  compatibleWith: nil)
+        if let imageURL = character.thumbnailURL {
+            cell.icon.kf.setImage(with: imageURL,
+                                  placeholder: placeholder)
+        } else {
+            cell.icon.image = placeholder
+        }
     }
 }
