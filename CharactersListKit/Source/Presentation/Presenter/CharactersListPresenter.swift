@@ -34,7 +34,7 @@ extension CharactersListPresenter {
         
     func characterSelected(at index: Int) {
         #warning("TODO: WIP navigate to detail")
-
+        print("Navigating to character detail")
 //        let character = characters[index]
 //        navigator.navigateToCharacterDetail(withIdentifier: character.id)
     }

@@ -19,11 +19,14 @@ public final class CharactersListKitAssembly {
     
     private let commonUIKit: CommonUIKitAssembly
     private let dataProviders: DataProvidersAssembly
+     private let dateFormmater: DateFormatter
     
     public init(commonUIKit: CommonUIKitAssembly,
-                dataProviders: DataProvidersAssembly) {
+                dataProviders: DataProvidersAssembly,
+                dateFormmater: DateFormatter) {
         self.commonUIKit = commonUIKit
         self.dataProviders = dataProviders
+        self.dateFormmater = dateFormmater
     }
     
     public var mainScreen : Screen {
@@ -63,6 +66,14 @@ extension CharactersListKitAssembly: CharactersListContainerViewControllerProvid
 
 extension CharactersListKitAssembly: CharactersListViewControllerProvider {
     func charactersListViewController(characters: [CharacterListModel]) -> CharactersListViewController {
-        CharactersListViewController(charactersListPresenter: charactersListPresenter(characters: characters))
+        CharactersListViewController(charactersListPresenter: charactersListPresenter(characters: characters),
+                                     cellBinderProvider: self)
+    }
+}
+
+extension CharactersListKitAssembly: CharacterListCellBinderProvider{
+    /// default implementation of a fake factory
+    func binderForCharacter(character: CharacterListModel) -> CharacterListCellBinder {
+        CharacterListCellBinder(character: character, dateFormatter: dateFormmater)
     }
 }

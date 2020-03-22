@@ -27,21 +27,30 @@ public final class AppCoreKitAssembly {
     static let window = UIWindow()
 
     // Setup navigation kit
-    lazy var navigatorKit = NavigatorKitAssembly(window: Self.window)
-    lazy var mainNavigator = navigatorKit.navigator()
+    private lazy var navigatorKit = NavigatorKitAssembly(window: Self.window)
+    private lazy var mainNavigator = navigatorKit.navigator()
     
     // SetUp first feature framework - Characters list
-    lazy var charactersListKit = CharactersListKitAssembly(commonUIKit: commonUIKit,
-                                                           dataProviders: dataProviders)
+    private lazy var charactersListKit = CharactersListKitAssembly(commonUIKit: commonUIKit,
+                                                                   dataProviders: dataProviders,
+                                                                   dateFormmater: dateFormatter)
     
     // SetUp the launch coordinator with the first screen
     lazy var appLaunchCoordinator = AppLaunchCoordinator(mainNavigator: mainNavigator,
-                                                         firstScreen: charactersListKit.mainScreen)
+                                                                 firstScreen: charactersListKit.mainScreen)
     
     // Setup Common UI kit
-    lazy var commonUIKit = CommonUIKitAssembly()
+    private lazy var commonUIKit = CommonUIKitAssembly()
     
     // SetUp data providers
-    lazy var dataProviders = DataProvidersAssembly()
+    private lazy var dataProviders = DataProvidersAssembly()
+    
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMM ''yy"
+        formatter.locale = .current
+        
+        return formatter
+    }()
 
 }

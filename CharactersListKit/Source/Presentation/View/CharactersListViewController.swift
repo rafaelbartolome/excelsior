@@ -24,9 +24,12 @@ final class CharactersListViewController: UITableViewController {
     // Dependencies
     
     private let presenter: CharactersListPresenter
+    private let cellBinderProvider: CharacterListCellBinderProvider
     
-    init(charactersListPresenter: CharactersListPresenter) {
+    init(charactersListPresenter: CharactersListPresenter,
+         cellBinderProvider: CharacterListCellBinderProvider) {
         presenter = charactersListPresenter
+        self.cellBinderProvider = cellBinderProvider
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -51,10 +54,9 @@ final class CharactersListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = CharactersListCell.dequeueReusableCell(for: indexPath, from: tableView)
         let character = presenter.character(for: indexPath.row)
-        #warning("TODO: WIP bind cell")
+        let binder = cellBinderProvider.binderForCharacter(character: character)
 
-        cell.header = character.name
-        cell.descriptionText = character.bio
+        binder.bind(to: cell)
         
         return cell
     }
