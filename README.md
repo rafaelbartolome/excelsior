@@ -9,6 +9,8 @@ Due to that, some parts are quite over-engineered as the main goal is to design 
 [![Swift](https://img.shields.io/badge/swift-5.2-green)](https://swift.org)
 [![License](https://img.shields.io/github/license/rafaelbartolome/excelsior)](LICENSE)
 
+![Demo](Doc/excelsior.gif)
+
 ## 💬 Description 
 
 ### Disclaimer
