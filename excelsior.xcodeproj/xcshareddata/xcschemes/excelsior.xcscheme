@@ -98,6 +98,16 @@
                ReferencedContainer = "container:excelsior.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "245594102427BCA6004E0126"
+               BuildableName = "MarvelClientTests.xctest"
+               BlueprintName = "MarvelClientTests"
+               ReferencedContainer = "container:excelsior.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
