@@ -16,6 +16,8 @@ class CharactersListContainerViewController: UIViewController {
     static let storyboard = "CharactersListContainer"
     static let viewController = "CharactersListContainerViewController"
     
+    private var childViewController: UIViewController?
+    
     private var charactersListContainerPresenter: CharactersListContainerPresenter! {
         didSet {
            charactersListContainerPresenter.view = self
@@ -48,19 +50,24 @@ class CharactersListContainerViewController: UIViewController {
 extension CharactersListContainerViewController: CharactersListContainerView {
     func showView(forState state: CharactersListState) {
         let viewController = charactersListViewControllerFactory.viewController(forState: state)
-        #warning("TODO: check if is needed to clear previous vc")
         setContentViewController(viewController, in: view)
     }
 }
 
-
 private extension CharactersListContainerViewController {
     func setContentViewController(_ viewController: UIViewController, in view: UIView) {
+        if let childVC = childViewController {
+            childVC.willMove(toParent: nil)
+            childVC.view.removeFromSuperview()
+            childVC.removeFromParent()
+        }
+        
         addChild(viewController)
         view.addSubview(viewController.view)
         viewController.view.frame = view.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         viewController.didMove(toParent: self)
+        childViewController = viewController
     }
 }
 

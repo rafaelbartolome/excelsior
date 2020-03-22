@@ -32,8 +32,6 @@ extension CharactersListContainerPresenter {
 
 private extension CharactersListContainerPresenter {
     func loadCharactersList() {
-        #warning("TODO: WIP")
-        
         /// Interactor returns always in main thread
         getCharacters.execute(nameStartsWith: searchString,
                               offset: offset) { [weak self] result in
@@ -50,7 +48,7 @@ private extension CharactersListContainerPresenter {
     }
     
     func getCharactersFinished(with error: CharacterListError) {
-        view.showView(forState: .loadError(title: "Something was wrong",
+        view.showView(forState: .loadError(title: "Something was wrong",  //TODO: Localization
                                            description: error.localizedDescription,
                                            delegate: self))
     }
