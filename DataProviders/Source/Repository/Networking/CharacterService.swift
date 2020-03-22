@@ -42,7 +42,7 @@ extension CharacterService: CharacterServiceProtocol {
                            name: "Super Lopez", bio: "Tambien es guay",
                            thumbnailURL: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/30/4/portrait_uncanny.jpg")!,
                            modified: Date())
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             completion(.success([c1, c2, c3]))
         }
         
@@ -50,6 +50,15 @@ extension CharacterService: CharacterServiceProtocol {
     
     func character(with id: Int, completion: @escaping CharacterCompletion) {
         #warning("TODO: WIP fake data")
-        completion(.failure(.notFound))
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                    completion(.failure(.notFound))
+//                }
+        let c1 = Character(id: 1,
+                           name: "Thor", bio: "Thor es guay",
+                           thumbnailURL: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/7/30/5e67fba816991/portrait_uncanny.jpg")!,
+                           modified: Date())
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            completion(.success(c1))
+        }
     }
 }

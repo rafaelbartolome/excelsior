@@ -34,20 +34,15 @@ class GetCharacterDetail{
 extension GetCharacterDetail: GetCharacterDetailProtocol {
     func execute(with id: CharacterId,
                  completion: @escaping (Result<CharacterDetail, CharacterDetailError>) -> Void) {
-        #warning("TODO: WIP")
-
-//        characterRepository.characters(nameStartsWith: name,
-//                                       offset: offset) { [weak self] result in
-//                                        self?.mainThreadScheduler.scheduleAsync {
-//                                            switch result {
-//                                            case .success(let characters):
-//                                                completion(.success(characters.map{
-//                                                    CharacterListModel(with: $0)
-//                                                }))
-//                                            case .failure(let repoError):
-//                                                completion(.failure(CharacterListError(characterRepositoryError: repoError)))
-//                                            }
-//                                        }
-//        }
+        characterRepository.character(with: id) { [weak self] result in
+            self?.mainThreadScheduler.scheduleAsync {
+                switch result {
+                case .success(let character):
+                    completion(.success(CharacterDetail(with: character)))
+                case .failure(let repoError):
+                    completion(.failure(CharacterDetailError(characterRepositoryError: repoError)))
+                }
+            }
+        }
     }
 }

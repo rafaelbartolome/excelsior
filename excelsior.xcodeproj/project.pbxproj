@@ -32,6 +32,9 @@
 		245593F82427A97D004E0126 /* CharacterDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593F72427A97D004E0126 /* CharacterDetailNavigator.swift */; };
 		245593FA2427AEB6004E0126 /* CharacterDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593F92427AEB6004E0126 /* CharacterDetailNavigator.swift */; };
 		245593FD2427B075004E0126 /* CharacterDetailContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 245593FC2427B075004E0126 /* CharacterDetailContainer.storyboard */; };
+		245593FF2427B610004E0126 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245593FE2427B610004E0126 /* CharacterDetailView.swift */; };
+		245594012427B834004E0126 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 245594002427B834004E0126 /* Images.xcassets */; };
+		245594032427B8E1004E0126 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 245594022427B8E1004E0126 /* Kingfisher */; };
 		2483C83B242605F40069B067 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2483C839242605F40069B067 /* LaunchScreen.storyboard */; };
 		2483C851242605F40069B067 /* excelsiorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2483C850242605F40069B067 /* excelsiorUITests.swift */; };
 		2483C86C2426080D0069B067 /* AppCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2483C8632426080D0069B067 /* AppCoreKit.framework */; };
@@ -332,6 +335,8 @@
 		245593F72427A97D004E0126 /* CharacterDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailNavigator.swift; sourceTree = "<group>"; };
 		245593F92427AEB6004E0126 /* CharacterDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailNavigator.swift; sourceTree = "<group>"; };
 		245593FC2427B075004E0126 /* CharacterDetailContainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterDetailContainer.storyboard; sourceTree = "<group>"; };
+		245593FE2427B610004E0126 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		245594002427B834004E0126 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2483C82B242605F20069B067 /* excelsior.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = excelsior.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2483C82E242605F20069B067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2483C837242605F40069B067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -433,6 +438,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				245594032427B8E1004E0126 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +631,7 @@
 				245593EA24278199004E0126 /* CharacterDetailViewControllerFactory.swift */,
 				245593F324278777004E0126 /* CharacterDetailViewController.swift */,
 				245593F424278777004E0126 /* CharacterDetailViewController.xib */,
+				245593FE2427B610004E0126 /* CharacterDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -660,6 +667,7 @@
 			isa = PBXGroup;
 			children = (
 				245593FC2427B075004E0126 /* CharacterDetailContainer.storyboard */,
+				245594002427B834004E0126 /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1244,6 +1252,9 @@
 				245593D524277E7B004E0126 /* PBXTargetDependency */,
 			);
 			name = CharacterDetailKit;
+			packageProductDependencies = (
+				245594022427B8E1004E0126 /* Kingfisher */,
+			);
 			productName = CharacterDetailKit;
 			productReference = 245593B524277E2D004E0126 /* CharacterDetailKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1619,6 +1630,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				245594012427B834004E0126 /* Images.xcassets in Resources */,
 				245593F624278777004E0126 /* CharacterDetailViewController.xib in Resources */,
 				245593FD2427B075004E0126 /* CharacterDetailContainer.storyboard in Resources */,
 			);
@@ -1740,6 +1752,7 @@
 				245593ED242782F3004E0126 /* CaracterDetailContainerView.swift in Sources */,
 				245593F524278777004E0126 /* CharacterDetailViewController.swift in Sources */,
 				245593DC24277F95004E0126 /* CharacterDetailScreen.swift in Sources */,
+				245593FF2427B610004E0126 /* CharacterDetailView.swift in Sources */,
 				245593F224278610004E0126 /* CharacterDetailPresenter.swift in Sources */,
 				245593E92427817B004E0126 /* CharacterDetailContainerPresenter.swift in Sources */,
 				245593F0242784A2004E0126 /* GetCharacterDetail.swift in Sources */,
@@ -3048,6 +3061,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		2455939B242776A7004E0126 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 245593972427759B004E0126 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		245594022427B8E1004E0126 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 245593972427759B004E0126 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;

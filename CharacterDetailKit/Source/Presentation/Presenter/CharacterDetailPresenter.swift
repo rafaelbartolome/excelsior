@@ -8,24 +8,22 @@
 
 import Foundation
 
-
 /// CharacterDetailPresenter is the presenter for a character detail
 final class CharacterDetailPresenter {
+    weak var view: CharacterDetailView!
+    
     private let character: CharacterDetail
-    
-    // MARK: - Dependencies
-    //    private let navigator: Navigator
-    
+       
     init(character: CharacterDetail){
-        //         navigator: Navigator) {
         self.character = character
-        //        self.navigator = navigator
     }
 }
 
-extension CharacterDetailPresenter {
-    
-    #warning("TODO: WIP")
-
+extension CharacterDetailPresenter {   
+    func didLoad() {
+        view.setUpName(character.name)
+        view.setUpBio(character.bio)
+        view.setUpImage(character.thumbnailURL)
+    }
 }
 
