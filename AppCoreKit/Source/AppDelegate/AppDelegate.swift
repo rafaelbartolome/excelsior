@@ -20,7 +20,7 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
         setUpAppDelegateDependencies()
         setUpWindow()
         
-        appLaunchCoordinator.application(application, didFinishLaunchingWithOptions: launchOptions ?? [:])
+        appLaunchCoordinator.application(didFinishLaunchingWithOptions: launchOptions ?? [:])
         
         return true
     }

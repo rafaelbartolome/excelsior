@@ -33,7 +33,7 @@ extension AppLaunchCoordinator {
     
     // MARK: App lifecycle
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+    func application(didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         setUpMainScreen()
     }
 

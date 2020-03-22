@@ -9,7 +9,12 @@
     }
   ],
   "defaultOptions" : {
-
+    "environmentVariableEntries" : [
+      {
+        "key" : "UnitTesting",
+        "value" : "YES"
+      }
+    ]
   },
   "testTargets" : [
     {

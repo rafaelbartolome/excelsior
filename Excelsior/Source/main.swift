@@ -11,6 +11,28 @@ import AppCoreKit
 import UIKit
 
 let appDelegateClass: AnyClass
-appDelegateClass = AppDelegate.self
+
+#if DEBUG
+
+    public var isRunningUnitTests: Bool {
+        guard let unitTestingEnvironmenValue = ProcessInfo.processInfo.environment["UnitTesting"] else {
+            return false
+        }
+        
+        return unitTestingEnvironmenValue == "YES"
+    }
+
+    if isRunningUnitTests {
+        appDelegateClass = UnitTestAppDelegate.self
+    } else {
+        appDelegateClass = AppDelegate.self
+    }
+
+#else
+
+    appDelegateClass = AppDelegate.self
+
+#endif
 
 _ = UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(appDelegateClass))
+
