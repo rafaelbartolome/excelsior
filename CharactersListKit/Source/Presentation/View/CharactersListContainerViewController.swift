@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CommonUIKit
 
 protocol CharactersListContainerViewControllerProvider: class {
     func charactersListContainerViewController() -> CharactersListContainerViewController
@@ -57,25 +58,9 @@ class CharactersListContainerViewController: UIViewController {
 extension CharactersListContainerViewController: CharactersListContainerView {
     func showView(forState state: CharactersListState) {
         let viewController = charactersListViewControllerFactory.viewController(forState: state)
-        setContentViewController(viewController, in: view)
-    }
-}
-
-private extension CharactersListContainerViewController {
-    func setContentViewController(_ viewController: UIViewController, in view: UIView) {
-        if let childVC = childViewController {
-            childVC.willMove(toParent: nil)
-            childVC.view.removeFromSuperview()
-            childVC.removeFromParent()
-        }
-        
-        addChild(viewController)
-        view.addSubview(viewController.view)
-        viewController.view.frame = view.bounds
-        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        viewController.didMove(toParent: self)
+        setContentViewController(viewController,
+                                 in: view,
+                                 withPreviousViewControler: childViewController)
         childViewController = viewController
     }
-}
-
-    
+}    

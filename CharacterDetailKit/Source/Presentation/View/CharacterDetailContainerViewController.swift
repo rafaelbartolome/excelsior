@@ -53,25 +53,9 @@ class CharacterDetailContainerViewController: UIViewController {
 extension CharacterDetailContainerViewController: CharacterDetailContainerView {
     func showView(forState state: CharacterDetailState) {
         let viewController = characterDetailViewControllerFactory.viewController(forState: state)
-        setContentViewController(viewController, in: view)
-    }
-}
-
-private extension CharacterDetailContainerViewController {
-    func setContentViewController(_ viewController: UIViewController, in view: UIView) {
-        if let childVC = childViewController {
-            childVC.willMove(toParent: nil)
-            childVC.view.removeFromSuperview()
-            childVC.removeFromParent()
-        }
-        
-        addChild(viewController)
-        view.addSubview(viewController.view)
-        viewController.view.frame = view.bounds
-        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        viewController.didMove(toParent: self)
+        setContentViewController(viewController,
+                                 in: view,
+                                 withPreviousViewControler: childViewController)
         childViewController = viewController
     }
 }
-
-

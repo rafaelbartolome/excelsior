@@ -53,6 +53,7 @@
 		245594412427BF2C004E0126 /* GetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245594402427BF2C004E0126 /* GetCharacters.swift */; };
 		245594432427C6AC004E0126 /* GetCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245594422427C6AC004E0126 /* GetCharacter.swift */; };
 		245594472427C7F4004E0126 /* MarvelClientAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245594462427C7F4004E0126 /* MarvelClientAssembly.swift */; };
+		245594492427D5A9004E0126 /* UIVIewController+content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245594482427D5A9004E0126 /* UIVIewController+content.swift */; };
 		2483C83B242605F40069B067 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2483C839242605F40069B067 /* LaunchScreen.storyboard */; };
 		2483C851242605F40069B067 /* excelsiorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2483C850242605F40069B067 /* excelsiorUITests.swift */; };
 		2483C86C2426080D0069B067 /* AppCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2483C8632426080D0069B067 /* AppCoreKit.framework */; };
@@ -404,6 +405,7 @@
 		245594402427BF2C004E0126 /* GetCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharacters.swift; sourceTree = "<group>"; };
 		245594422427C6AC004E0126 /* GetCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharacter.swift; sourceTree = "<group>"; };
 		245594462427C7F4004E0126 /* MarvelClientAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelClientAssembly.swift; sourceTree = "<group>"; };
+		245594482427D5A9004E0126 /* UIVIewController+content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+content.swift"; sourceTree = "<group>"; };
 		2483C82B242605F20069B067 /* excelsior.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = excelsior.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2483C82E242605F20069B067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2483C837242605F40069B067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1295,6 +1297,7 @@
 			children = (
 				24C13AAF2427506E00AF4B68 /* UIView+tools.swift */,
 				24C13AB42427520900AF4B68 /* UITableViewCell+tools.swift */,
+				245594482427D5A9004E0126 /* UIVIewController+content.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2106,6 +2109,7 @@
 				24C13AA02426C99000AF4B68 /* RetryViewControllerDelegate.swift in Sources */,
 				24C13AB02427506E00AF4B68 /* UIView+tools.swift in Sources */,
 				24C13AB52427520900AF4B68 /* UITableViewCell+tools.swift in Sources */,
+				245594492427D5A9004E0126 /* UIVIewController+content.swift in Sources */,
 				245593FA2427AEB6004E0126 /* CharacterDetailNavigator.swift in Sources */,
 				24C13A41242682B300AF4B68 /* LoadingViewController.swift in Sources */,
 				24C13A442426848B00AF4B68 /* CommonUIKitAssembly.swift in Sources */,
