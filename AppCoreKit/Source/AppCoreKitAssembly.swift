@@ -12,6 +12,7 @@ import CommonUIKit
 import CharactersListKit
 import CharacterDetailKit
 import DataProviders
+import MarvelClient
 import UIKit
 
 public protocol AppCoreKitAssemblyProviderProtocol {
@@ -39,15 +40,18 @@ public final class AppCoreKitAssembly {
     private lazy var commonUIKit = CommonUIKitAssembly()
     
     // SetUp data providers
-    private lazy var dataProviders = DataProvidersAssembly()
+    private lazy var dataProviders = DataProvidersAssembly(apiClient: marvelAPI.apiClient)
     
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "d MMM ''yy"
+        formatter.dateFormat = "d MMM yyyy"
         formatter.locale = .current
         
         return formatter
     }()
+    
+    // SetUp Marvel API client
+    private lazy var marvelAPI = MarvelClientAssembly()
 
     // SetUp first feature framework - Characters list
     private lazy var charactersListKit = CharactersListKitAssembly(commonUIKit: commonUIKit,

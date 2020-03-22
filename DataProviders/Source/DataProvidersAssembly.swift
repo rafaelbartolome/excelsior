@@ -7,13 +7,17 @@
 //
 
 import Foundation
+import MarvelClient
 
 public class DataProvidersAssembly {
     
-    public init() {}
+    private let apiClient: MarvelAPIClient
+    
+    public init(apiClient: MarvelAPIClient) {
+        self.apiClient = apiClient
+    }
     
     public lazy var CharactersRepository: CharacterRepository =  InternalCharacterRepository(characterService: characterService)
     
-    private lazy var characterService: CharacterServiceProtocol = CharacterService()
-    
+    private lazy var characterService: CharacterServiceProtocol = CharacterService(apiClient: apiClient)
 }

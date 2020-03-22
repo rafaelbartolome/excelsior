@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MarvelClient
 
 protocol CharacterServiceProtocol: AnyObject {
     func characters(nameStartsWith: String?,
@@ -16,8 +17,11 @@ protocol CharacterServiceProtocol: AnyObject {
 }
 
 class CharacterService {
-    #warning("TODO: WIP missing API")
-
+    let apiClient: MarvelAPIClient
+    
+    init(apiClient: MarvelAPIClient) {
+        self.apiClient = apiClient
+    }
 }
 
 extension CharacterService: CharacterServiceProtocol {
@@ -25,26 +29,46 @@ extension CharacterService: CharacterServiceProtocol {
                     offset: Int?,
                     completion: @escaping CharactersCompletion) {
         
-        #warning("TODO: WIP fake data")
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//            completion(.failure(.notFound))
-//        }
-        
-        let c1 = Character(id: 1,
-                           name: "Thor", bio: "Thor es guay",
-                           thumbnailURL: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/7/30/5e67fba816991/portrait_uncanny.jpg")!,
-                           modified: Date())
-        let c2 = Character(id: 2,
-                           name: "IronMan", bio: "Tambien es guay",
-                           thumbnailURL: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/30/5e67aa73b0d81/portrait_uncanny.jpg")!,
-                           modified: Date())
-        let c3 = Character(id: 3,
-                           name: "Super Lopez", bio: "Tambien es guay",
-                           thumbnailURL: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/30/4/portrait_uncanny.jpg")!,
-                           modified: Date())
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            completion(.success([c1, c2, c3]))
+        let request = GetCharacters(name: nil,
+                                    nameStartsWith: nameStartsWith,
+                                    offset: offset)
+        apiClient.send(request) { response in
+            switch response {
+            case .success(let dataContainer):
+                let networkCharacters = dataContainer.results
+                guard networkCharacters.count != 0 else {
+                    completion(.failure(.notFound))
+                    return
+                }
+                
+                let characters = networkCharacters.map { Character(withResponse: $0)}
+                
+                completion(.success(characters))
+            case .failure(let error):
+                completion(.failure(CharacterRepositoryError(withResponseError: error)))
+            }
+
         }
+//        #warning("TODO: WIP fake data")
+////        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+////            completion(.failure(.notFound))
+////        }
+//
+//        let c1 = Character(id: 1,
+//                           name: "Thor", bio: "Thor es guay",
+//                           thumbnailURL: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/7/30/5e67fba816991/portrait_uncanny.jpg")!,
+//                           modified: Date())
+//        let c2 = Character(id: 2,
+//                           name: "IronMan", bio: "Tambien es guay",
+//                           thumbnailURL: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/30/5e67aa73b0d81/portrait_uncanny.jpg")!,
+//                           modified: Date())
+//        let c3 = Character(id: 3,
+//                           name: "Super Lopez", bio: "Tambien es guay",
+//                           thumbnailURL: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/30/4/portrait_uncanny.jpg")!,
+//                           modified: Date())
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            completion(.success([c1, c2, c3]))
+//        }
         
     }
     

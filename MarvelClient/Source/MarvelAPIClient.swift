@@ -32,7 +32,12 @@ public class MarvelAPIClient {
                     if let dataContainer = marvelResponse.data {
                         completion(.success(dataContainer))
                     } else if let message = marvelResponse.message {
-                        completion(.failure(MarvelError.server(message: message)))
+                        var code = 0
+                        if let httpResponse = response as? HTTPURLResponse {
+                            code = httpResponse.statusCode
+                        }
+                        completion(.failure(MarvelError.server(code: code,
+                                                               message: message)))
                     } else {
                         completion(.failure(MarvelError.decoding))
                     }

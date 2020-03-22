@@ -6,5 +6,5 @@
 public enum MarvelError: Error {
     case encoding
     case decoding
-    case server(message: String)
+    case server(code: Int, message: String)
 }
