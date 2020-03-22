@@ -56,8 +56,9 @@ private extension CharacterSummaryView {
         static let cornerRadius: CGFloat = 6
         static let contentSpacing: CGFloat = 24
         static let contentInset = UIEdgeInsets(top: 16, left: 24, bottom: 16, right: 16)
-        static let iconSize = CGSize(width: 32, height: 32)
+        static let iconSize = CGSize(width: 80, height: 80)
         static let textSpacing: CGFloat = 8
+        static let borderWidth: CGFloat = 1
     }
 
     func setUp() {
@@ -90,18 +91,23 @@ private extension CharacterSummaryView {
             iconView.heightAnchor.constraint(equalToConstant: Constants.iconSize.height)
         ]
         NSLayoutConstraint.activate(iconViewConstraints)
-        
+        iconView.contentMode = .scaleAspectFill
+        iconView.layer.cornerRadius = Constants.cornerRadius
+        iconView.clipsToBounds = true
+        iconView.layer.borderWidth = Constants.borderWidth
+        iconView.layer.borderColor = UIColor.lightGray.cgColor
+
         contentView.addArrangedSubview(iconView)
     }
     
     func setUpText() {
         headerLabel.textColor = .black
         headerLabel.numberOfLines = 1
-        headerLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        headerLabel.font = UIFont.preferredFont(forTextStyle: .headline)
         
         textLabel.textColor = .darkGray
         textLabel.numberOfLines = 0
-        textLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        textLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
         
         let textContentView = UIStackView(arrangedSubviews: [headerLabel, textLabel])
         textContentView.axis = .vertical
