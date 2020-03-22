@@ -23,9 +23,6 @@ class CharactersListViewControllerFactory {
     }
 }
 
-#warning("TODO: WIP")
-typealias LoadErrorViewControllerDelegate = Any
-
 extension CharactersListViewControllerFactory {
     func viewController(forState state: CharactersListState) -> UIViewController {
         switch state {

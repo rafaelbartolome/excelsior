@@ -25,14 +25,14 @@ extension CharacterService: CharacterServiceProtocol {
                     offset: Int?,
                     completion: @escaping CharactersCompletion) {
         
-        #warning("TODO: WIP")
+        #warning("TODO: WIP fake data")
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             completion(.failure(.notFound))
         }
     }
     
     func character(with id: Int, completion: @escaping CharacterCompletion) {
-        #warning("TODO: WIP")
+        #warning("TODO: WIP fake data")
         completion(.failure(.notFound))
     }
 }

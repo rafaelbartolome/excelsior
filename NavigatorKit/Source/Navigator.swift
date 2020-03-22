@@ -47,7 +47,7 @@ final class InternalNavigator: Navigator {
 //            )
 //        }
         default:
-            #warning("TODO: WIP")
+            #warning("TODO: WIP implement navigation modes")
             print("TODO")
         }
     }

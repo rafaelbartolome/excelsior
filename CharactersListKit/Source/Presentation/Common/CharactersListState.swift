@@ -8,10 +8,10 @@
 
 import Foundation
 import CommonUIKit
+import DataProviders
 
 enum CharactersListState {
     case loading(String)
-    #warning("TODO: WIP")
-    case charactersList([Any])
+    case charactersList([Character])
     case loadError(title: String, description: String, delegate: RetryViewControllerDelegate)
 }
