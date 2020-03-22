@@ -12,6 +12,8 @@ protocol CharactersListContainerViewControllerProvider: class {
     func charactersListContainerViewController() -> CharactersListContainerViewController
 }
 
+/// CharactersListContainerViewController is the container for all possible list states (loading, loaded or error)
+/// Each list state is representer in a diferent view controller that is presented as a child view controller.
 class CharactersListContainerViewController: UIViewController {
     static let storyboard = "CharactersListContainer"
     static let viewController = "CharactersListContainerViewController"

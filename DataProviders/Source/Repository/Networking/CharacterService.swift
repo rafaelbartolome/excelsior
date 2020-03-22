@@ -26,9 +26,22 @@ extension CharacterService: CharacterServiceProtocol {
                     completion: @escaping CharactersCompletion) {
         
         #warning("TODO: WIP fake data")
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            completion(.failure(.notFound))
+//        }
+        
+        let c1 = Character(id: 1,
+                           name: "Thor", bio: "Thor es guay",
+                           thumbnailURL: nil,
+                           modified: Date())
+        let c2 = Character(id: 2,
+                           name: "IronMan", bio: "Tambien es guay",
+                           thumbnailURL: nil,
+                           modified: Date())
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            completion(.failure(.notFound))
+            completion(.success([c1, c2]))
         }
+        
     }
     
     func character(with id: Int, completion: @escaping CharacterCompletion) {

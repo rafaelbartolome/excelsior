@@ -8,10 +8,10 @@
 
 import Foundation
 import CommonUIKit
-import DataProviders
 
+/// States of character list and associated values (Sum type)
 enum CharactersListState {
     case loading(String)
-    case charactersList([Character])
+    case charactersList([CharacterListModel])
     case loadError(title: String, description: String, delegate: RetryViewControllerDelegate)
 }

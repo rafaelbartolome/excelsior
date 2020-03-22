@@ -10,16 +10,19 @@ import Foundation
 import UIKit
 import CommonUIKit
 
+/// Abstract factory that generates the right view controller given a view state
 class CharactersListViewControllerFactory {
     // MARK: - Dependencies
     private let loadingViewControllerProvider: LoadingViewControllerProvider
     private let retryViewControllerProvider: RetryViewControllerProvider
-
+    private let charactersListViewControllerProvider: CharactersListViewControllerProvider
     
     init(loadingViewControllerProvider: LoadingViewControllerProvider,
-         retryViewControllerProvider: RetryViewControllerProvider) {
+         retryViewControllerProvider: RetryViewControllerProvider,
+         charactersListViewControllerProvider: CharactersListViewControllerProvider) {
         self.loadingViewControllerProvider = loadingViewControllerProvider
         self.retryViewControllerProvider = retryViewControllerProvider
+        self.charactersListViewControllerProvider = charactersListViewControllerProvider
     }
 }
 
@@ -28,8 +31,9 @@ extension CharactersListViewControllerFactory {
         switch state {
         case .loading(let detailText):
             return loadingViewControllerProvider.loadingViewController(detailText: detailText)
-        case .charactersList:
-            return UIViewController()
+        case .charactersList(let characters):
+            let charactersListViewController = charactersListViewControllerProvider.charactersListViewController(characters: characters)
+            return charactersListViewController
         case let .loadError(title, description, delegate):
             let retryViewController = retryViewControllerProvider.retryViewController(title: title, descriptionText: description)
             retryViewController.delegate = delegate

@@ -15,6 +15,7 @@ enum CharacterListError: Error {
     case unknow(Error)
 }
 
+/// Mapper between data providers domain and presentation domain
 extension CharacterListError {
     init(characterRepositoryError: CharacterRepositoryError) {
         switch characterRepositoryError{

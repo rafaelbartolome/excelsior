@@ -36,12 +36,17 @@ public final class CharactersListKitAssembly {
     
     func charactersListViewControllerFactory() -> CharactersListViewControllerFactory {
         CharactersListViewControllerFactory(loadingViewControllerProvider: commonUIKit,
-                                            retryViewControllerProvider: commonUIKit)
+                                            retryViewControllerProvider: commonUIKit,
+                                            charactersListViewControllerProvider: self)
     }
     
     func getCharacters() -> GetCharacters {
         GetCharacters(characterRepository: dataProviders.CharactersRepository,
                       schedulerFactory: GCDSchedulerFactory())
+    }
+    
+    func charactersListPresenter(characters: [CharacterListModel]) -> CharactersListPresenter {
+        CharactersListPresenter(characters: characters)
     }
 }
 
@@ -53,5 +58,11 @@ extension CharactersListKitAssembly: CharactersListContainerViewControllerProvid
         return CharactersListContainerViewController.createWith(storyboard: storyboard,
                                                                 charactersListContainerPresenter: charactersListContainerPresenter(),
                                                                 charactersListViewControllerFactory: charactersListViewControllerFactory())
+    }
+}
+
+extension CharactersListKitAssembly: CharactersListViewControllerProvider {
+    func charactersListViewController(characters: [CharacterListModel]) -> CharactersListViewController {
+        CharactersListViewController(charactersListPresenter: charactersListPresenter(characters: characters))
     }
 }

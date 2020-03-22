@@ -9,7 +9,8 @@
 import Foundation
 import CommonUIKit
 
-class CharactersListContainerPresenter{
+/// CharactersListContainerPresenter in the presenter in charge of retrieve all characters and set the view into the right state
+final class CharactersListContainerPresenter{
     weak var view: CharactersListContainerView!
     
     private let getCharacters: GetCharacters
@@ -38,13 +39,15 @@ private extension CharactersListContainerPresenter {
                                 guard let s = self else { return }
                                 switch result {
                                 case .success(let characters):
-                                    #warning("TODO: WIP")
-
-                                    break
+                                    s.getCharactersFinished(with: characters)
                                 case .failure(let error):
                                     s.getCharactersFinished(with: error)
                                 }
         }
+    }
+    
+    func getCharactersFinished(with characters: [CharacterListModel]) {
+        view.showView(forState: .charactersList(characters))
     }
     
     func getCharactersFinished(with error: CharacterListError) {
@@ -52,7 +55,6 @@ private extension CharactersListContainerPresenter {
                                            description: error.localizedDescription,
                                            delegate: self))
     }
-    
     
     func retry() {
         view.showView(forState: .loading("Loading characters list ...")) //TODO: Localization

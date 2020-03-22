@@ -72,6 +72,13 @@
 		24C13A9D2426C6DD00AF4B68 /* RetryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A9B2426C6DD00AF4B68 /* RetryViewController.swift */; };
 		24C13A9E2426C6DD00AF4B68 /* RetryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C13A9C2426C6DD00AF4B68 /* RetryViewController.xib */; };
 		24C13AA02426C99000AF4B68 /* RetryViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13A9F2426C99000AF4B68 /* RetryViewControllerDelegate.swift */; };
+		24C13AA824274B4300AF4B68 /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13AA724274B4300AF4B68 /* CharactersListViewController.swift */; };
+		24C13AAA24274C1A00AF4B68 /* CharactersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13AA924274C1A00AF4B68 /* CharactersListCell.swift */; };
+		24C13AAC24274CAF00AF4B68 /* CharacterSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13AAB24274CAF00AF4B68 /* CharacterSummaryView.swift */; };
+		24C13AB02427506E00AF4B68 /* UIView+tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13AAF2427506E00AF4B68 /* UIView+tools.swift */; };
+		24C13AB2242751BD00AF4B68 /* CharactersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13AB1242751BD00AF4B68 /* CharactersListPresenter.swift */; };
+		24C13AB52427520900AF4B68 /* UITableViewCell+tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13AB42427520900AF4B68 /* UITableViewCell+tools.swift */; };
+		24C13AB72427592B00AF4B68 /* CharacterListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C13AB62427592B00AF4B68 /* CharacterListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +208,13 @@
 			remoteGlobalIDString = 24C139AD2426370C00AF4B68;
 			remoteInfo = CharactersListKit;
 		};
+		24C13AB824275A3100AF4B68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2483C823242605F20069B067 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24C13A4B24268E8F00AF4B68;
+			remoteInfo = DataProviders;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -301,6 +315,13 @@
 		24C13A9B2426C6DD00AF4B68 /* RetryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryViewController.swift; sourceTree = "<group>"; };
 		24C13A9C2426C6DD00AF4B68 /* RetryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RetryViewController.xib; sourceTree = "<group>"; };
 		24C13A9F2426C99000AF4B68 /* RetryViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryViewControllerDelegate.swift; sourceTree = "<group>"; };
+		24C13AA724274B4300AF4B68 /* CharactersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewController.swift; sourceTree = "<group>"; };
+		24C13AA924274C1A00AF4B68 /* CharactersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListCell.swift; sourceTree = "<group>"; };
+		24C13AAB24274CAF00AF4B68 /* CharacterSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSummaryView.swift; sourceTree = "<group>"; };
+		24C13AAF2427506E00AF4B68 /* UIView+tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+tools.swift"; sourceTree = "<group>"; };
+		24C13AB1242751BD00AF4B68 /* CharactersListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListPresenter.swift; sourceTree = "<group>"; };
+		24C13AB42427520900AF4B68 /* UITableViewCell+tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+tools.swift"; sourceTree = "<group>"; };
+		24C13AB62427592B00AF4B68 /* CharacterListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -629,7 +650,7 @@
 			isa = PBXGroup;
 			children = (
 				24C13A0724266CA900AF4B68 /* CharactersListScreen.swift */,
-				24C13A0F2426743400AF4B68 /* Common */,
+				24C13A0F2426743400AF4B68 /* Models */,
 				24C13A0B242673B500AF4B68 /* View */,
 				24C13A0C242673BC00AF4B68 /* Presenter */,
 			);
@@ -639,8 +660,11 @@
 		24C13A0B242673B500AF4B68 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				24C13A1624267F4A00AF4B68 /* CharactersListViewControllerFactory.swift */,
 				24C13A0D242673DB00AF4B68 /* CharactersListContainerView.swift */,
 				24C13A0524266C3500AF4B68 /* CharactersListContainerViewController.swift */,
+				24C13AA724274B4300AF4B68 /* CharactersListViewController.swift */,
+				24C13AA924274C1A00AF4B68 /* CharactersListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -649,18 +673,19 @@
 			isa = PBXGroup;
 			children = (
 				24C13A0924266FB800AF4B68 /* CharactersListContainerPresenter.swift */,
+				24C13AB1242751BD00AF4B68 /* CharactersListPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		24C13A0F2426743400AF4B68 /* Common */ = {
+		24C13A0F2426743400AF4B68 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				24C13A102426744900AF4B68 /* CharactersListState.swift */,
-				24C13A1624267F4A00AF4B68 /* CharactersListViewControllerFactory.swift */,
 				24C13A982426C3BF00AF4B68 /* CharacterListError.swift */,
+				24C13AB62427592B00AF4B68 /* CharacterListModel.swift */,
 			);
-			path = Common;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		24C13A202426824800AF4B68 /* CommonUIKit */ = {
@@ -684,10 +709,12 @@
 		24C13A3C2426826200AF4B68 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				24C13A9A2426C6C000AF4B68 /* RetryViewController */,
-				24C13A6B2426B65A00AF4B68 /* LoadingViewController */,
+				24C13AAE2427505700AF4B68 /* Extensions */,
 				24C13A212426824800AF4B68 /* CommonUIKit.h */,
 				24C13A432426848B00AF4B68 /* CommonUIKitAssembly.swift */,
+				24C13A9A2426C6C000AF4B68 /* RetryViewController */,
+				24C13A6B2426B65A00AF4B68 /* LoadingViewController */,
+				24C13AAD24274CB300AF4B68 /* CharacterSummaryView */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -852,6 +879,23 @@
 			path = RetryViewController;
 			sourceTree = "<group>";
 		};
+		24C13AAD24274CB300AF4B68 /* CharacterSummaryView */ = {
+			isa = PBXGroup;
+			children = (
+				24C13AAB24274CAF00AF4B68 /* CharacterSummaryView.swift */,
+			);
+			path = CharacterSummaryView;
+			sourceTree = "<group>";
+		};
+		24C13AAE2427505700AF4B68 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				24C13AAF2427506E00AF4B68 /* UIView+tools.swift */,
+				24C13AB42427520900AF4B68 /* UITableViewCell+tools.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -999,6 +1043,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				24C13AB924275A3100AF4B68 /* PBXTargetDependency */,
 				24C13AA4242749D900AF4B68 /* PBXTargetDependency */,
 			);
 			name = CharactersListKit;
@@ -1354,12 +1399,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C13AA824274B4300AF4B68 /* CharactersListViewController.swift in Sources */,
 				24C13A0E242673DB00AF4B68 /* CharactersListContainerView.swift in Sources */,
 				24C13A112426744900AF4B68 /* CharactersListState.swift in Sources */,
+				24C13AAA24274C1A00AF4B68 /* CharactersListCell.swift in Sources */,
 				24C13A0A24266FB800AF4B68 /* CharactersListContainerPresenter.swift in Sources */,
 				24C13A1724267F4A00AF4B68 /* CharactersListViewControllerFactory.swift in Sources */,
 				24C13A0624266C3500AF4B68 /* CharactersListContainerViewController.swift in Sources */,
+				24C13AB72427592B00AF4B68 /* CharacterListModel.swift in Sources */,
 				24C13A0824266CA900AF4B68 /* CharactersListScreen.swift in Sources */,
+				24C13AB2242751BD00AF4B68 /* CharactersListPresenter.swift in Sources */,
 				24C13A6A2426B23700AF4B68 /* GetCharacters.swift in Sources */,
 				24C13A992426C3BF00AF4B68 /* CharacterListError.swift in Sources */,
 				24C13A0024266B7B00AF4B68 /* CharactersListKitAssembly.swift in Sources */,
@@ -1397,7 +1446,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C13AAC24274CAF00AF4B68 /* CharacterSummaryView.swift in Sources */,
 				24C13AA02426C99000AF4B68 /* RetryViewControllerDelegate.swift in Sources */,
+				24C13AB02427506E00AF4B68 /* UIView+tools.swift in Sources */,
+				24C13AB52427520900AF4B68 /* UITableViewCell+tools.swift in Sources */,
 				24C13A41242682B300AF4B68 /* LoadingViewController.swift in Sources */,
 				24C13A442426848B00AF4B68 /* CommonUIKitAssembly.swift in Sources */,
 				24C13A9D2426C6DD00AF4B68 /* RetryViewController.swift in Sources */,
@@ -1529,6 +1581,11 @@
 			isa = PBXTargetDependency;
 			target = 24C139AD2426370C00AF4B68 /* CharactersListKit */;
 			targetProxy = 24C13AA5242749EC00AF4B68 /* PBXContainerItemProxy */;
+		};
+		24C13AB924275A3100AF4B68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24C13A4B24268E8F00AF4B68 /* DataProviders */;
+			targetProxy = 24C13AB824275A3100AF4B68 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

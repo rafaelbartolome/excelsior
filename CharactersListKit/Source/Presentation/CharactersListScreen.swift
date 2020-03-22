@@ -10,6 +10,7 @@ import Foundation
 import NavigatorKit
 import UIKit
 
+/// CharactersListScreen in the main screen for the character list feature
 class CharactersListScreen: Screen {
     private unowned let charactersListContainerViewControllerProvider: CharactersListContainerViewControllerProvider
     
