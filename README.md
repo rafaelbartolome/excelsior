@@ -1,7 +1,7 @@
 # Excelsior
 ### Just playing with Marvel Open API in a demo project.
 
-The idea behind this project is to develop an iOS app with an scalable architecture , putting into practice several design patterns.
+The idea behind this project is to develop an iOS app with an scalable architecture, putting into practice several design patterns.
  
 Due to that, some parts are quite over-engineered as the main goal is to design a solid architecture, this code is not production ready.
 
@@ -17,7 +17,7 @@ Talking about architectures is quite hard as everybody has a preferred one, norm
  
 Please, be open minded with this repo. The idea is to develop several patterns that have solved problems in projects I worked on over the last years.
 
-The main objective is not to develop a **perfect** architecture (That's not a real thing) but to try to solve a common problem, make a scalable architecture, divided in several independent frameworks in order to allow the collaboration of a **big** number of developers in a **huge** project with as many conflicts as possible.
+The main objective is not to develop a **perfect** architecture (that's not a real thing) but to try to solve a common problem, make a scalable architecture, divided in several independent frameworks in order to allow the collaboration of a **big** number of developers in a **huge** project with as few conflicts as possible.
 
 ### Vertical vs horizontal frameworks
 
@@ -30,15 +30,16 @@ The main objective is not to develop a **perfect** architecture (That's not a re
 ![Vertical frameworks](Doc/vertical-fmw.png)
 
 • **Mixed approach** Why not having the best from both worlds? Well, that's complicated. Creating a mixed approach with horizontal frameworks for common code parts and vertical features has a lot of challenges but it looks as the best approach for big applications.
-Main challenge is to define the boundaries of each framework and define how is responsible of maintain the common parts
+Main challenge is to define the boundaries of each framework and define who is responsible of maintain the common parts
 .
 
 ![Vertical frameworks](Doc/mixed-fmw.png)
 
-## 🏗Frameworks architecture
+## 🏗 Frameworks architecture
 
-Finally, for this demo I decided to implement a mixed approach, with some horizontal frameworks that provides common functionality and horizontal frameworks for each main feature
-- **AppCoreKit** that maneges the app lifecycle and initializes all other frameworks.
+Finally, for this demo I decided to implement a mixed approach, with some horizontal frameworks that provides common functionality and horizontal frameworks for each main feature:
+
+- **AppCoreKit** that manages the app lifecycle and initializes all other frameworks.
 - **NavigationKit** that allows us to navigate between features.
 - **CommonUIKit**  with all common views, fonts, styles and assets.
 - **ToolsKit** that contains common code, utils, etc.
@@ -55,10 +56,7 @@ Is an extension from VIPER architecture, but having the *entities* in *repositor
 For the building of all parts of the app, *Assemblies* are used, that allow dependency inversion through layers due to the injection of dependencies. This approach facilitates testing as all dependencies are injected during the construction of the objects.
 Also most boundaries between layers are defined by protocols to avoid coupling the code. This abstraction also allows to create test doubles for the unit tests.
 
-
-
 ![Internal architecture](Doc/architecture.png)
-
 
 For the API client, there are several public frameworks to consider, like Moya, but finally I decided to use a custom implementation as Moya’s approach doesn’t scale with medium to big teams. With Moya you end up with a single [big enum type](https://github.com/Moya/Moya/blob/master/docs/Examples/Basic.md) that contains lots of details. Merge conflicts within that file will certainly arise, and generally, the end file will be hard to process. The "open/close" principle of SOLID is broken.
 
@@ -66,6 +64,8 @@ For the API client, there are several public frameworks to consider, like Moya, 
 
 - [x] List of Marvel characters.
 - [x] Detail of a specific character.
+- [x] Some Unit test
+- [x] Just a few UI test
 
 ## 😬 Todo 
 
@@ -89,15 +89,23 @@ For the API client, there are several public frameworks to consider, like Moya, 
 
 - **[Repository Pattern](https://martinfowler.com/eaaCatalog/repository.html)** - "Catalog of Patterns of Enterprise Application Architecture" by Edward Hieatt and Rob Mee
 
-- **[API Client](https://medium.com/makingtuenti/writing-a-scalable-api-client-in-swift-4-b3c6f7f3f3fb)** - "Writing a Scalable API Client in Swift 5"  [Victor Pimentel](https://medium.com/@VictorPimentel)
+- **[Marvel API Client](https://medium.com/makingtuenti/writing-a-scalable-api-client-in-swift-4-b3c6f7f3f3fb)** - "Writing a Scalable API Client in Swift 5"  [Victor Pimentel](https://medium.com/@VictorPimentel)
 
 - **[Navigation](https://jobandtalent.engineering/the-navigator-420b24fc57da)** - "Another twist to iOS navigations" [Ruben Mendez](https://jobandtalent.engineering/@ruben.mendez)
 
 - **[Dependency Injection](https://www.vadimbulavin.com/dependency-injection-in-swift/)** - "Advanced Dependency Injection on iOS with Swift 5" by [Vadim Bulavin](https://www.vadimbulavin.com)
 
+## 📚 Dependencies
+
+- **[Kingfisher](https://github.com/onevcat/Kingfisher)**
+
+- **[Marvel API Client](https://medium.com/makingtuenti/writing-a-scalable-api-client-in-swift-4-b3c6f7f3f3fb)**
+
 ## 🍔 Author
 
 - Rafael Bartolomé – [@rafaelbartolome](https://twitter.com/rafaelbartolome) – rafa@rafaelbartolome.es
+
+Most of the ideas from this repo comes from the *iOS Team* [@TuentiEng](https://twitter.com/TuentiEng)
 
 ## 📄 License
 
