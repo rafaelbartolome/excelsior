@@ -39,7 +39,7 @@ Main challenge is to define the boundaries of each framework and define who is r
 
 ## 🏗 Frameworks architecture
 
-Finally, for this demo I decided to implement a mixed approach, with some horizontal frameworks that provides common functionality and horizontal frameworks for each main feature:
+Finally, for this demo I decided to implement a mixed approach, with some horizontal frameworks that provides common functionality and vertical frameworks for each main feature:
 
 - **AppCoreKit** that manages the app lifecycle and initializes all other frameworks.
 - **NavigationKit** that allows us to navigate between features.
