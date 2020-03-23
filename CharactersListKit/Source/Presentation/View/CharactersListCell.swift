@@ -29,6 +29,10 @@ final class CharactersListCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         // do nothing
     }
+    
+    override func prepareForReuse() {       
+        customView.icon.image = nil
+    }
 }
 
 private extension CharactersListCell {
